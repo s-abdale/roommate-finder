@@ -7,7 +7,7 @@ import './page.css';
 export const Page = ({ user, onLogin, onLogout, onCreateAccount }) => (
   <article>
     <Header user={user} onLogin={onLogin} onLogout={onLogout} onCreateAccount={onCreateAccount} />
-
+git
     <section>
       <h2>Pages in Storybook</h2>
       <p>

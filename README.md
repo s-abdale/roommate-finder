@@ -11,3 +11,13 @@ A REACT based app to allow end-users to be able find and contact roomates TINDER
 
 ## Wireframe
 ![wireframe](https://github.com/s-abdale/roommate-finder/blob/main/docs/Wireframe.png?raw=true)
+
+## Stories components
+- login form
+- register form
+- buttons
+  - selected
+  - unselected
+- header [created]
+  - logged in
+  - logged out
