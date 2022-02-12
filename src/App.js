@@ -1,13 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
-// import Header from './components/Header';
 
+import { Button } from './components/Button.jsx';
+import { Header } from './components/Header.jsx';
 
 function App() {
   return (
     <div>
-      {/* <Header/> */}
-      test
+      <Button/>
+      <Header/>
     </div>
   );
 }
