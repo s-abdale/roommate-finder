@@ -16,8 +16,9 @@ A REACT based app to allow end-users to be able find and contact roomates TINDER
 - login form
 - register form
 - buttons
-  - selected
-  - unselected
-- header [created]
-  - logged in
-  - logged out
+- header
+- main page -wait until header and buttons done
+- matchlist.js - list of matches
+- matchlistitem.js - detailed profile
+- profile
+- swiper
