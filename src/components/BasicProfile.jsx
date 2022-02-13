@@ -1,22 +1,16 @@
 import React from 'react';
 
-/* 
-  props
-  basic profile needs to know: 
-    > first_name
-    > last_name
-    user_image ?
-    > bio
-    preferences
-*/
-
 import './basicProfile.css';
 
 export default function basicProfile(props) {
-  // const { users } = props;
-  // console.log(Object.values(props));
-  const values = Object.values(props);
-  console.log(values.id)
+  // works - METHOD 1
+  const { first_name, last_name, bio } = props;
+  // console.log(props);
+
+
+  // works - METHOD 2
+  // const {users} = props;
+  // console.log(users.id)
 
   return (
     <article className='basic-profile'>
@@ -28,10 +22,13 @@ export default function basicProfile(props) {
         <img src="https://www.pikpng.com/pngl/m/80-805068_my-profile-icon-blank-profile-picture-circle-clipart.png" alt="blue and white clipart profile picture" className='user-pfp'/>
 
       <div className='user-details'>
-        {/* <p>First name {users.first_name}</p>
-        <p>Last name {users.last_name}</p>
-        <p>Bio ... {users.bio}</p> */}
-        <i>placeholder</i>
+        {/* works - METHOD 1 */}
+        <p>{first_name} {last_name}</p>
+        <i>{bio}</i>
+
+        {/* below works - METHOD 2 */}
+        {/* <span>{users.first_name} {users.last_name}</span> */}
+        {/* <p>{users.bio}</p> */}
       </div>
     </article>
   );
