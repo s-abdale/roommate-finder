@@ -6,7 +6,7 @@ import './App.css';
 // import { Button } from './components/Button.jsx';
 import { Header } from './components/Header.jsx';
 import MatchList from './components/MatchList';
-// import BasicProfile from './components/BasicProfile';
+import BasicProfile from './components/BasicProfile';
 import tempUserData from './components/tempUserData';
 import {prepareUserData} from './helpers/userHelpers';
 
@@ -19,9 +19,11 @@ function App() {
   return (
     <div>
       <Header/>
-      <MatchList
+      {/* <MatchList
         key = {users[0]}
         users = {users[0]}
+      /> */}
+      <BasicProfile
       />
     </div>
 
