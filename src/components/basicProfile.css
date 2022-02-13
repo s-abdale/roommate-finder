@@ -1,6 +1,6 @@
 .basic-profile {
 
-  border: solid red;
+  /* border: solid red; */
 
   display: flex;
   flex-direction: column;
@@ -25,6 +25,6 @@
 } */
 .user-pfp {
   background-color: gainsboro;
-  max-width: 50vw;
-  max-height: 50vh;
+  max-width: 80vw;
+  max-height: 45vh;
 }

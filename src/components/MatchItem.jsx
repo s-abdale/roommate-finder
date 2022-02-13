@@ -1,18 +1,10 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
-/* 
-  props
-  match item needs to know: 
-    first_name * starting with this only
-    last_name
-    user_image
-    bio
-*/
-
+import MatchList from './MatchList';
 import './matchItem.css';
 
 export default function MatchItem(props) {
-  const { first_name } = props;
+  const {id, first_name, last_name} = props;
+  console.log(props);
 
   return (
     <article className='match-item'>
@@ -25,9 +17,9 @@ export default function MatchItem(props) {
       </div>
 
       <div className='user-details'>
-        <p>User name</p>
-        <p>{first_name}</p>
-        {/* <p>User bio</p> */}
+        <i>{first_name}</i>
+        <i>{last_name}</i>
+
       </div>
     </article>
   );
