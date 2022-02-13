@@ -1,0 +1,30 @@
+.basic-profile {
+
+  border: solid red;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 5%;
+  margin: 5%;
+  margin-top: 5vh;
+
+  height: 60vh;
+  /* styling */
+  background-color: whitesmoke;
+  border-radius: 1vh;
+
+
+  
+}
+/* .user-details {
+  display: flex;
+  justify-content: space-between;
+} */
+.user-pfp {
+  background-color: gainsboro;
+  max-width: 50vw;
+  max-height: 50vh;
+}

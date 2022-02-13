@@ -1,0 +1,9 @@
+/* .match-list{
+  border: solid green;
+} */
+.match-items{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
