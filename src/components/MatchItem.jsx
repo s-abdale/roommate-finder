@@ -1,5 +1,5 @@
 import React from 'react';
-import MatchList from './MatchList';
+// import MatchList from './MatchList';
 import './matchItem.css';
 
 export default function MatchItem(props) {

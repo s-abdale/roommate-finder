@@ -13,18 +13,20 @@ import {prepareUserData} from './helpers/userHelpers';
 
 function App() {
   const users = prepareUserData(tempUserData);
-  // console.log(users[0]); // note: help function not working
+  // console.log(users[0][0]); // note: help function not working
 
 
   return (
     <div>
       <Header/>
-      {/* <MatchList
+      <MatchList
         key = {users[0]}
         users = {users[0]}
-      /> */}
-      <BasicProfile
       />
+      {/* <BasicProfile
+        key = {users[0][0]}
+        users = {users[0][0]}
+      /> */}
     </div>
 
   );
