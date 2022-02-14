@@ -4,7 +4,7 @@ import './matchItem.css';
 
 export default function MatchItem(props) {
   const {id, first_name, last_name} = props;
-  console.log(props);
+  // console.log(props);
 
   return (
     <article className='match-item'>

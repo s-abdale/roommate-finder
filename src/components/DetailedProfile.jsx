@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+// import TinderCard from 'react-tinder-card'
 
 import './detailedProfile.css';
+ /* 
+  To push db here, map users same as MatchList
+ */
+
+
 
 export default function DetailedProfile(props) {
   // works - METHOD 1
-  // const { first_name, last_name, location, bio, email, phone_number} = props;
+  const { first_name, last_name, location, bio, email, phone_number} = props;
   // console.log(props);
 
 
   // works - METHOD 2
-  const {users} = props;
+  // const {users} = props;
   // console.log(users.id)
 
   return (
@@ -26,7 +33,7 @@ export default function DetailedProfile(props) {
 
       <article className='user-details'>
         {/* works - METHOD 1 */}
-        {/* <span>{first_name} {last_name}</span>
+        <span>{first_name} {last_name}</span>
 
         <p>{location}</p>
         <p>{bio}</p>
@@ -35,10 +42,10 @@ export default function DetailedProfile(props) {
         
         <p>CONTACT INFO:</p>
         <p>{email}</p>
-        <p>Tel.: {phone_number}</p> */}
+        <p>Tel.: {phone_number}</p>
 
         {/* works - METHOD 2 */}
-        <span>{users.first_name} {users.last_name}</span>
+        {/* <span>{users.first_name} {users.last_name}</span>
 
         <p>{users.location}</p>
         <p>{users.bio}</p>
@@ -47,7 +54,7 @@ export default function DetailedProfile(props) {
         
         <p>CONTACT INFO:</p>
         <p>{users.email}</p>
-        <p>Tel.: {users.phone_number}</p>
+        <p>Tel.: {users.phone_number}</p> */}
       </article>
     </section>
   );

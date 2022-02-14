@@ -7,6 +7,7 @@ import { prepareUserData, getBasicInfo } from '../helpers/userHelpers';
 
 export default function MatchList(props) {
   const {users} = props;
+  console.log(props);
 
   const parsedMatchListItem = users.map((singleMatch) => {
     return (

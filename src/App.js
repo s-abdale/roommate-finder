@@ -7,6 +7,7 @@ import './App.css';
 import { Header } from './components/Header.jsx';
 import MatchList from './components/MatchList';
 import DetailedProfile from './components/DetailedProfile';
+import Likes from './components/Likes';
 import tempUserData from './components/tempUserData';
 import {prepareUserData} from './helpers/userHelpers';
 
@@ -22,8 +23,8 @@ function App() {
         key = {users[0]}
         users = {users[0]}
       /> */}
-      <DetailedProfile
-        key = {users[0][0]}
+      {/* <DetailedProfile
+        // key = {users[0][0]}
 
         // method 1:
         // first_name = {users[0][0].first_name}
@@ -31,7 +32,16 @@ function App() {
         // bio = {users[0][0].bio}
 
         // method 2:
-        users = {users[0][0]}
+        // users = {users[0][0]}
+
+
+        // method 3:
+        key = {users[0]}
+        users = {users[0]}
+      /> */}
+      <Likes
+        key = {users[0]}
+        users = {users[0]}
       />
     </div>
 
