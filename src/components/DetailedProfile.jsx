@@ -2,9 +2,9 @@ import React from 'react';
 
 import './detailedProfile.css';
 
-export default function detailedProfile(props) {
+export default function DetailedProfile(props) {
   // works - METHOD 1
-  // const { first_name, last_name, bio } = props;
+  // const { first_name, last_name, location, bio, email, phone_number} = props;
   // console.log(props);
 
 
@@ -26,8 +26,16 @@ export default function detailedProfile(props) {
 
       <article className='user-details'>
         {/* works - METHOD 1 */}
-        {/* <p>{first_name} {last_name}</p>
-        <i>{bio}</i> */}
+        {/* <span>{first_name} {last_name}</span>
+
+        <p>{location}</p>
+        <p>{bio}</p>
+
+        <br/>
+        
+        <p>CONTACT INFO:</p>
+        <p>{email}</p>
+        <p>Tel.: {phone_number}</p> */}
 
         {/* works - METHOD 2 */}
         <span>{users.first_name} {users.last_name}</span>
