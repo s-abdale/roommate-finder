@@ -1,4 +1,4 @@
-.basic-profile {
+.detailed-profile {
 
   /* border: solid red; */
 
@@ -11,7 +11,7 @@
   margin: 5%;
   margin-top: 5vh;
 
-  height: 60vh;
+  min-height: 60vh;
   /* styling */
   background-color: whitesmoke;
   border-radius: 1vh;
@@ -19,12 +19,19 @@
 
   
 }
-/* .user-details {
+.user-details {
   display: flex;
-  justify-content: space-between;
-} */
+  flex-direction: column;
+  align-items: center;
+}
 .user-pfp {
   background-color: gainsboro;
   max-width: 80vw;
   max-height: 45vh;
+  margin-bottom: 5vh;
+}
+
+p{
+  /* this is to counteract the p tag's default styling */
+  margin: 3px;
 }
