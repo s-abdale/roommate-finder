@@ -1,11 +1,5 @@
 import React, { useState } from 'react';
-
-// import TinderCard from 'react-tinder-card'
-
 import './detailedProfile.css';
- /* 
-  To push db here, map users same as MatchList
- */
 
 
 
