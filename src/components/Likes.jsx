@@ -28,16 +28,20 @@ export default function Likes(props) {
 
   const parsedLikeesItem = users.map((singleLikee) => {
     return (
-      <TinderCard key={singleLikee.name} onSwipe={(dir) => swiped(dir, singleLikee.name)} onCardLeftScreen={() => outOfFrame(singleLikee.name)}>
-        <DetailedProfile
-          first_name = {singleLikee.first_name}
-          last_name = {singleLikee.last_name}
-          location = {singleLikee.location}
-          bio = {singleLikee.bio}
-          email = {singleLikee.email}
-          phone_number = {singleLikee.phone_number}
-        />
-      </TinderCard>
+      <div className='card-container'>
+        <TinderCard key={singleLikee.name} onSwipe={(dir) => swiped(dir, singleLikee.name)} onCardLeftScreen={() => outOfFrame(singleLikee.name)}>
+          <div className='card'>
+            <DetailedProfile
+              first_name = {singleLikee.first_name}
+              last_name = {singleLikee.last_name}
+              location = {singleLikee.location}
+              bio = {singleLikee.bio}
+              email = {singleLikee.email}
+              phone_number = {singleLikee.phone_number}
+            />
+          </div>
+        </TinderCard>
+      </div>
     );
   })
 

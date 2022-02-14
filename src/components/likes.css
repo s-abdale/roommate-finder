@@ -1,0 +1,29 @@
+/* 
+
+✅ container --> page
+✅ header --> page title
+? cardcontainer --> wrapped around tindercard
+✅ card --> analagous to detailedprofile
+  cardimage  --> holds the image
+  cardtitle --> holds the name
+infotext --> n/a still didn't implement
+
+*/
+
+/* .card-container{
+  width: 90%;
+  max-width: 260px;
+  height: 300px;
+} */
+.card {
+  position: absolute;
+  /* background-color: red; */
+  width: 100%;
+  /* max-width: 260px; */
+  height: 50px;
+  /* shadow-color: black;
+  shadow-opacity: 0.2;
+  shadow-radius: 20px; */
+  /* border-radius: 20px; */
+  resize-mode: cover;
+}

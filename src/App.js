@@ -24,20 +24,20 @@ function App() {
         users = {users[0]}
       /> */}
       {/* <DetailedProfile
-        // key = {users[0][0]}
+        // hardcoded for testing
+
+        key = {users[0][0]}
 
         // method 1:
-        // first_name = {users[0][0].first_name}
-        // last_name = {users[0][0].last_name}
-        // bio = {users[0][0].bio}
+        first_name = {users[0][0].first_name}
+        last_name = {users[0][0].last_name}
+        location = {users[0][0].location}
+        bio = {users[0][0].bio}
+        email = {users[0][0].email}
+        phone_number = {users[0][0].phone_number}
 
         // method 2:
         // users = {users[0][0]}
-
-
-        // method 3:
-        key = {users[0]}
-        users = {users[0]}
       /> */}
       <Likes
         key = {users[0]}
