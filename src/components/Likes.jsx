@@ -22,11 +22,12 @@ export default function Likes(props) {
 
 /* -------------------------------------- */
   const swiped = (direction, nameToDelete) => {
-    console.log('removing: ' + nameToDelete)
-    setLastDirection(direction)
+    // console.log('removing: ' + nameToDelete);
+    setLastDirection(direction);
+    console.log(`🔥 moving ${nameToDelete} ${direction}`);
   } 
   const outOfFrame = (name) => {
-    console.log(name + ' left the screen!')
+    console.log(`🧯 ${name} left the screen!`);
   } // expand here with axios calls
 /* -------------------------------------- */
 
@@ -35,24 +36,45 @@ export default function Likes(props) {
   const childRefs = useMemo(() => Array(users.length).fill(0).map(i => React.createRef()), []);
 
   const swipe = (dir) => {
-    console.log('swipe running');
 
-    const cardsLeft = users.filter(singleLikee => !alreadyRemoved.includes(singleLikee.name))
+    const cardsLeft = users.filter(singleLikee => !alreadyRemoved.includes(singleLikee.email))
+
     
-    if (cardsLeft.length) {
-      const toBeRemoved = cardsLeft[cardsLeft.length - 1].name // Find the card object to be removed
-      const index = users.map(singleLikee => singleLikee.name).indexOf(toBeRemoved) // Find the index of which to make the reference to
+    if (cardsLeft.length) { // if there are users present ...
+      // console.log(`before: ${cardsLeft.length}`);
+
+      const toBeRemoved = cardsLeft[cardsLeft.length - 1].email // Find the card object to be removed
+      // console.log(`to be removed: ${toBeRemoved}`);
+
+      const index = users.map(singleLikee => singleLikee.email).indexOf(toBeRemoved) // Find the index of which to make the reference to
+      // console.log(`index to be removed: ${index}`);
+
       alreadyRemoved.push(toBeRemoved) // Make sure the next card gets removed next time if this card do not have time to exit the screen
-      childRefs[index].current.swipe(dir) // Swipe the card!
+      childRefs[index].current.swipe(dir) // Swipe the card! 🚨🚨🚨 THIS PART IS BROKEN 🚨🚨🚨
+      console.log(`after: ${cardsLeft.length}`);
     }
   }
 
 
 
   const parsedLikeesItem = users.map((singleLikee) => {
+
+    const name = (`${singleLikee.first_name} ${singleLikee.last_name}`);
+
+
     return (
       <div className='card-container'>
-        <TinderCard key={singleLikee.name} onSwipe={(dir) => swiped(dir, singleLikee.name)} onCardLeftScreen={() => outOfFrame(singleLikee.name)}>
+        <TinderCard 
+          key={singleLikee.name} 
+          
+          onSwipe={(dir) => {
+            swiped(dir, name); 
+          }} 
+          
+          onCardLeftScreen={() => outOfFrame(name)}
+        >
+
+
           <div className='card'>
             <DetailedProfile
               first_name = {singleLikee.first_name}
@@ -63,6 +85,8 @@ export default function Likes(props) {
               phone_number = {singleLikee.phone_number}
             />
           </div>
+
+
         </TinderCard>
       </div>
     );
@@ -74,39 +98,39 @@ export default function Likes(props) {
   const clickingRight = () => console.log('clicking right');
 
   return (
-    <>
-      <section className='likes-list'>
-        <p>List of likes</p>
-        
 
-        <article className='likes-items' >
-          {parsedLikeesItem}
-        </article>
+    <section className='likes-list'>
 
-        <button 
-          onClick={clickingLeft} 
-          title='Swipe left!' 
-        > 
-          Left 
-        </button>
+      <p>List of likes</p>
 
-        <button 
-          // onClick={clickingRight}
-          onClick={() => swipe('right')}
-          title='Swipe right!'
-        > 
-          Right 
-        </button>
+      <article className='likes-items' >
+        {parsedLikeesItem}
+      </article>
 
-          {/* <button onClick={() => swipe('right')} title='Swipe right!'> Right </button> */}
+      <button 
+        onClick={clickingLeft} 
+        title='Swipe left!' 
+      > 
+        Left 
+      </button>
 
-        {lastDirection ? <p>You swiped {lastDirection}</p> : <p />}
-      </section>
+      <button 
+        // onClick={clickingRight}
+        onClick={() => swipe('right')}
+        title='Swipe right!'
+      > 
+        Right 
+      </button>
 
-      {/* <section> 
-        <button onClick={clickingbutton} title='Swipe left!' > Left </button>
-        <button title='Swipe right!'> Right </button>
-      </section> */}
-    </>
+        {/* <button onClick={() => swipe('right')} title='Swipe right!'> Right </button> */}
+
+      {lastDirection ? <p>You swiped {lastDirection}</p> : <p />}
+    </section>
+
+
   );
 }
+{/* <section> 
+  <button onClick={clickingbutton} title='Swipe left!' > Left </button>
+  <button title='Swipe right!'> Right </button>
+</section> */}
