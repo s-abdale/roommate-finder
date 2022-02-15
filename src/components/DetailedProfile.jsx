@@ -26,8 +26,8 @@ export default function DetailedProfile(props) {
 
 
       <article className='user-details'>
-        {/* works - METHOD 1 */}
         <span>{first_name} {last_name}</span>
+        {/* works - METHOD 1 */}
 
         <p>{location}</p>
         <p>{bio}</p>
