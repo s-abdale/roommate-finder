@@ -61,7 +61,7 @@ export default function Likes(props) {
 
     const name = (`${singleLikee.first_name} ${singleLikee.last_name}`);
 
-//do singleLikee.id 
+    //do singleLikee.id 
     return (
       <div className='card-container'>
         <TinderCard 
@@ -125,6 +125,9 @@ export default function Likes(props) {
         {/* <button onClick={() => swipe('right')} title='Swipe right!'> Right </button> */}
 
       {lastDirection ? <p>You swiped {lastDirection}</p> : <p />}
+
+      <button className='go-to-matches'>CLICK TO SEE YOUR MATCHES</button>
+
     </section>
 
 
