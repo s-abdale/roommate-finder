@@ -1,21 +1,49 @@
 import React, {useState, useEffect} from "react";
-
+import axios from "axios";
 import './register.css';
 
-export default function Resgister({
-  setFirstnameReg,  
-  setLastnameReg,
-  setUsernameReg,
-  setEmailReg,
-  setPasswordReg,
-  setPhonenumberReg,
-  setGenderReg,
-  setContactinfoReg,
-  setUserimageReg,
-  setBioReg,
-  setLocationReg,
-  register}) {
+export default function Resgister() {
+
+    const [firstnameReg, setFirstnameReg] = useState('');
+    const [lastnameReg, setLastnameReg] = useState('');
+    const [usernameReg, setUsernameReg] = useState('');
+    const [emailReg, setEmailReg] = useState('');
+    const [passwordReg, setPasswordReg] = useState('');
+    const [phonenumberReg, setPhonenumberReg] = useState('');
+    const [genderReg, setGenderReg] = useState(null);
+    const [contactinfoReg, setContactinfoReg] = useState('');
+    const [userimageReg, setUserimageReg] = useState('');
+    const [bioReg, setBioReg] = useState('');
+    const [locationReg, setLocationReg] = useState('');
   
+    const register = () => {
+      console.log("testing: ", genderReg)
+      let isMale = null
+      if (genderReg === "Female") {
+        isMale = false
+      } else if (genderReg === "Male") {
+        isMale = true
+      }
+  
+      console.log("isMale: ", isMale )
+      axios.post("/api/register", {
+        firstName: firstnameReg,
+        lastName: lastnameReg,
+        userName: usernameReg,
+        email: emailReg,
+        password: passwordReg,
+        phoneNumber: phonenumberReg,
+        gender: isMale,
+        // gender: genderReg,
+        contactInfo: contactinfoReg,
+        userImage: userimageReg,
+        bio: bioReg,
+        location: locationReg
+      }).then((response) => {
+        console.log(response.data)
+        //redirect to new page.
+      })
+    }
   console.log("setfirstname  ....", setFirstnameReg)
   return (
     <form onSubmit={event => event.preventDefault()} autoComplete="off" className='register'>
@@ -116,3 +144,15 @@ export default function Resgister({
   // const cors = require("cors");
   // app.use(cors())
 
+
+  // setFirstnameReg={setFirstnameReg} 
+  //       setLastnameReg={setLastnameReg}
+  //       setUsernameReg={setUsernameReg}
+  //       setEmailReg={setEmailReg}
+  //       setPasswordReg={setPasswordReg}
+  //       setPhonenumberReg={setPhonenumberReg}
+  //       setGenderReg={setGenderReg}
+  //       setContactinfoReg={setContactinfoReg}
+  //       setUserimageReg={setUserimageReg}
+  //       setBioReg={setBioReg}
+  //       setLocationReg={setLocationReg}

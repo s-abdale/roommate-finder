@@ -57,16 +57,16 @@ export default function Likes(props) {
 
 
 
-  const parsedLikeesItem = users.map((singleLikee) => {
+  const parsedLikeesItem = users.map((singleLikee, index) => {
 
     const name = (`${singleLikee.first_name} ${singleLikee.last_name}`);
 
-
+//do singleLikee.id 
     return (
       <div className='card-container'>
         <TinderCard 
           key={singleLikee.name} 
-          
+          ref={childRefs[index]}
           onSwipe={(dir) => {
             swiped(dir, name); 
           }} 
