@@ -78,11 +78,11 @@ export default function Profile(props) {
       <h3 className='page-header'>PROFILE INFORMATION</h3>
 
 
-      <div className='profile-image'>
+      {/* <div className='profile-image'>
         <img src="https://www.pikpng.com/pngl/m/80-805068_my-profile-icon-blank-profile-picture-circle-clipart.png" alt="blue and white clipart profile picture" className='user-pfp'/>
-      </div>
+      </div> */}
 
-      {/* <div> <img src={user.user_image} ></img></div> */}
+      <div> <img src={user.user_image} ></img></div>
 
       <div className='profile-text'>
         <div>Name: {user.first_name}, {user.last_name}</div>

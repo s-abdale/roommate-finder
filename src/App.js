@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 // npm i react-router-dom
-import {BrowserRouter as Router, Link , Route, Routes} from 'react-router-dom';
+import {BrowserRouter as Router, Link , Route, Routes, useNavigate} from 'react-router-dom';
 
 import './App.css';
 
@@ -28,19 +28,19 @@ function App() {
       <Header/>
       <Router>
         <Routes>
-
             <Route path="/login" element={<Login/>}></Route>
             <Route path="/register" element={<Register/>}></Route>
             <Route path="/preferences" element={<Preferences/>}></Route>
             <Route path="/profile" element={<Profile/>}></Route>
+            <Route path="/" element={<Main/>}></Route>
+            <Route path="/matchList" element={<MatchList key = {users[0]} users = {users[0]}/>}></Route>
+
         </Routes>
       </Router>
 
-      {/* <Preferences/> */}
-      {/* <Login /> */}
-      {/* <Resgister /> */}
+    
       {/* <h1>{loginStatus}</h1> */}
-      {/* <Profile  /> */}
+      
       {/* <MatchList
         key = {users[0]}
         users = {users[0]}
@@ -68,7 +68,6 @@ function App() {
         users = {users[0]}
       /> */}
 
-      {/* <Main/> */}
 
       {/* <Profile 
         // using method 1 from detailed profile
