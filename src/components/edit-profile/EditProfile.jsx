@@ -1,38 +1,82 @@
-import React, { useState } from 'react';
-import '../profile.css';
+import React, { useState, useEffect } from 'react';
 import axios from "axios";
+import '../profile.css';
+// import {useNavigate} from 'react-router-dom';
 
 
 
-export default function editProfile({
-  first_name, 
-  last_name, 
-  gender, 
-  location, 
-  bio, 
-  email, 
-  phone_number, 
-  contact_info,
-  setFirstnameReg,  
-  setLastnameReg,
-  setUsernameReg,
-  setEmailReg,
-  setPasswordReg,
-  setPhonenumberReg,
-  setGenderReg,
-  setContactinfoReg,
-  setUserimageReg,
-  setBioReg,
-  setLocationReg}) 
-  {
-  // const { first_name, last_name, gender, location, bio, email, phone_number, contact_info} = props;
-  const name = `${first_name} ${last_name}`;
-  // console.log(`gender is: ${gender}`);
+
+export default function EditProfile(){
+
+  // const navigate = useNavigate();
+  // console.log(navigate);
+
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     navigate('/about');
+  //     // navigate(-1); // go back
+  //   }, 3000);
+  // }, [navigate]);
 
 
-  // NOTE: ADJUST THIS FORMULA FOR OTHER GENDER IDENTITY OR PASS IT IN FROM APP.JS - SEE SARANYA
-  const genderIs = gender ? 'male' : 'female';
-  // console.log(first_name);
+  const [firstnameEdit, setFirstnameEdit] = useState('');
+  const [lastnameEdit, setLastnameEdit] = useState('');
+  // const [usernameEdit, setUsernameEdit] = useState('');
+  const [emailEdit, setEmailEdit] = useState('');
+  // const [passwordEdit, setPasswordEdit] = useState('');
+  const [phonenumberEdit, setPhonenumberEdit] = useState('');
+  const [genderEdit, setGenderEdit] = useState(null);
+  const [contactinfoEdit, setContactinfoEdit] = useState('');
+  // const [userimageEdit, setUserimageEdit] = useState('');
+  const [bioEdit, setBioEdit] = useState('');
+  // const [locationEdit, setLocationEdit] = useState('');
+
+
+  const edit = () => {
+    // process gender
+    let isMale = null
+    if (genderEdit === "Female") {
+      isMale = false
+    } else if (genderEdit === "Male") {
+      isMale = true
+    }
+    // post new results to db
+    axios.post("/api/user/profile", {
+      first_name: firstnameEdit,
+      last_name: lastnameEdit,
+      // userName: usernameEdit,
+      email: emailEdit,
+      phone_number: phonenumberEdit,
+      gender: isMale,
+      contact_info: contactinfoEdit,
+      bio: bioEdit,
+    }).then((response) => {
+      console.log(response.data)
+      //redirect to new page.
+
+      // response.redirect("/profile")
+    })
+  }
+
+  const [user, setUser] = useState({});
+
+  useEffect(() => {
+    axios.get("/api/user/profile", {
+    })
+    .then(response => {
+      const profileData = response.data.profile[0];
+      console.log(profileData);
+      setFirstnameEdit(profileData.first_name);
+      setLastnameEdit(profileData.last_name);
+      setEmailEdit(profileData.email);
+      setPhonenumberEdit(profileData.phone_number);
+      setGenderEdit(profileData.gender);
+      setContactinfoEdit(profileData.contact_info);
+      setBioEdit(profileData.bio);
+    })
+  }, [])
+
+
 
 
 
@@ -40,102 +84,55 @@ export default function editProfile({
     <section className='main-body'>
       <h3 className='page-header'>EDIT PROFILE</h3>
 
+      <form onSubmit={event => event.preventDefault()} autoComplete="off" className='profile-text'>
 
-      {/* <div className='profile-image'>
-        <img src="https://www.pikpng.com/pngl/m/80-805068_my-profile-icon-blank-profile-picture-circle-clipart.png" alt="blue and white clipart profile picture" className='user-pfp'/>
-      </div> */}
+        <label>First Name</label>
+        <input type='text' value={firstnameEdit}name="firstnameEdit" onChange={(e) => {setFirstnameEdit(e.target.value)}}></input>
+        <br></br>
 
+        <label>Last Name</label>
+        <input type='text'  value={lastnameEdit} name="lastnameEdit"onChange={(e) => {setLastnameEdit(e.target.value)}} ></input>
+        <br></br>
 
-      <div className='profile-text'>
-        {/* <div>{name}</div>
+        {/* <label>User Name</label>
+        <input type='text' placeholder='Username' name="usernameEdit" onChange={(e) => {setUsernameEdit(e.target.value)}} ></input>
+        <br></br> */}
 
-        <div>{genderIs}</div>
+        <label>Email</label>
+        <input type='email' value={emailEdit} name="emailEdit" onChange={(e) => {setEmailEdit(e.target.value)}}></input>
+        <br></br>
 
-        <div>{bio}</div>
+        
+        <label>Phone Number</label>
+        <input type='text' value={phonenumberEdit}  name="phonenumberEdit" onChange={(e) => {setPhonenumberEdit(e.target.value)}} ></input>
+        <br></br>
 
-        <div>{phone_number}</div>
+        <label>Gender:
+          <input type="text" value={genderEdit}  placeholder="Gender" list="browsers" name="genderEdit" onChange={(e) => {setGenderEdit(e.target.value)}}/>    
+        </label>
+          <datalist id="browsers">
+            <option value="Male"/> 
+            <option value="Female"/> 
+            <option value="They/Them"/> 
+            {/* <option value="Prefer not to say"/> */}
+          </datalist>
+          <br></br>
 
-        <div>{contact_info}</div> */}
+          {/* <label>Gender</label>
+          <input type='text' placeholder='Select Gender' onChange={(e) => {setGenderEdit(e.target.value)}} ></input>
+          <br></br> */}
 
-
-
-
-  <form onSubmit={event => event.preventDefault()} autoComplete="off" className='profile-text'>
-    <h1>{first_name}</h1>
-    <label>First Name</label>
-    <input type='text' value={first_name} name="firstnameReg" onChange={(e) => {setFirstnameReg(e.target.value)}}></input>
-    <br></br>
-
-    <label>Last Name</label>
-    <input type='text' value={last_name} name="lastnameReg"onChange={(e) => {setLastnameReg(e.target.value)}} ></input>
-    <br></br>
-
-    <label>User Name</label>
-    {/* <input type='text' placeholder='Username' name="usernameReg" onChange={(e) => {setUsernameReg(e.target.value)}} ></input> */}
-    <br></br>
-
-    <label>Email</label>
-    <input type='email' value={email} name="emailReg" onChange={(e) => {setEmailReg(e.target.value)}}></input>
-    <br></br>
-
-    {/* <label>Password</label> */}
-    {/* <input type='password' placeholder='Password...' name="passwordReg" onChange={(e) => {setPasswordReg(e.target.value)}} ></input> */}
-    
-    <label>Phone Number</label>
-    <input type='text' value={phone_number} name="phonenumberReg" onChange={(e) => {setPhonenumberReg(e.target.value)}} ></input>
-    <br></br>
-
-    <label>Gender:
-      <input type="text"  placeholder="Gender" list="browsers" name="genderReg" onChange={(e) => {setGenderReg(e.target.value)}}/>    
-    </label>
-      <datalist id="browsers">
-        <option value="Male"/> 
-        <option value="Female"/> 
-        <option value="They/Them"/> 
-        {/* <option value="Prefer not to say"/> */}
-      </datalist>
-      <br></br>
-
-      <label>Gender</label>
-      <input type='text' placeholder='Select Gender' onChange={(e) => {setGenderReg(e.target.value)}} ></input>
-      <br></br>
-
-      <label>Contact Info</label>
-      <input type='text' value={contact_info} name="contactinfoReg" onChange={(e) => {setContactinfoReg(e.target.value)}}></input>
-      <br></br>
-
-      <label>Upload image</label>
-      <input type='text' placeholder='Upload Image' name="userimageReg" onChange={(e) => {setUserimageReg(e.target.value)}}></input>
-      <br></br>
-
-      <label>Bio</label>
-      <input type='text' value={bio}  name="bioReg" onChange={(e) => {setBioReg(e.target.value)}}></input>
-      <br></br>
-      <label>Location</label>
-      <input type='text' value={location} name="locationReg" onChange={(e) => {setLocationReg(e.target.value)}}></input>
-      <button type='submit' onClick={() => console.log('clicked')}> Update </button>
-    </form>
+          <label>Contact Info</label>
+          <input type='text' value={contactinfoEdit} name="contactinfoEdit" onChange={(e) => {setContactinfoEdit(e.target.value)}}></input>
+          <br></br>
 
 
-      </div>
+          <label>Bio</label>
+          <input type='text' value={bioEdit}  name="bioEdit" onChange={(e) => {setBioEdit(e.target.value)}}></input>
+          <br></br>
+          <button type='submit' onClick={edit}> Update </button>
+        </form>
+
     </section>
   );
 };
-
-
-  // db.query(
-  //     // "INSERT INTO users (first_name, last_name, user_name, phone_number, email, contact_info, user_image, bio, location, gender) WHERE [current user = user_id] VALUES [props]"
-
-  //     "UPDATE users SET first_name=value, last_name, user_name, phone_number, email, contact_info, user_image, bio, location, gender WHERE user_id = [current user id]"
-      
-      
-  //     ,
-  //     (err, result) => {
-  //       if (err) {
-  //         res.send({err: err})
-  //       }
-  //       if (result.length > 0) {
-  //         res.send(result);
-  //       }
-  //     }
-  //   )
