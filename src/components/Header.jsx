@@ -4,7 +4,18 @@ import PropTypes from 'prop-types';
 import { Button } from './Button';
 import './header.css';
 
-export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
+const onLogout = () => {
+  window.location.href = "/logout"
+}
+
+const onLogin = () => {
+  window.location.href = "/login"
+}
+const onCreateAccount = () => {
+  window.location.href = "/register"
+}
+
+export const Header = ({user}) => (
   <header>
     <div className="wrapper">
       <div>
@@ -40,12 +51,12 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
   </header>
 );
 
-Header.propTypes = {
-  user: PropTypes.shape({}),
-  onLogin: PropTypes.func.isRequired,
-  onLogout: PropTypes.func.isRequired,
-  onCreateAccount: PropTypes.func.isRequired,
-};
+// Header.propTypes = {
+//   user: PropTypes.shape({}),
+//   onLogin: PropTypes.func.isRequired,
+//   onLogout: PropTypes.func.isRequired,
+//   onCreateAccount: PropTypes.func.isRequired,
+// };
 
 Header.defaultProps = {
   user: null,
