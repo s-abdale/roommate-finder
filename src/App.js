@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
-// do npm install axios
-// import axios from "axios";
+// npm i react-router-dom
+import {BrowserRouter as Router, Link , Route, Routes} from 'react-router-dom';
 
 import './App.css';
 
@@ -14,125 +14,37 @@ import Profile from './components/Profile.jsx';
 import EditProfile from './components/edit-profile/EditProfile.jsx';
 import tempUserData from './components/tempUserData';
 import {prepareUserData} from './helpers/userHelpers';
-
+import Preferences from "./components/Preferences";
 import Login from "./components/Login";
-import Resgister from "./components/Register";
+import Register from "./components/Register";
 import { dblClick } from "@testing-library/user-event/dist/click";
 
+const someName = "something"
 function App() {
   const users = prepareUserData(tempUserData);
-
-  /* from register */
-
-  const [firstnameReg, setFirstnameReg] = useState('');
-  const [lastnameReg, setLastnameReg] = useState('');
-  const [usernameReg, setUsernameReg] = useState('');
-  const [emailReg, setEmailReg] = useState('');
-  const [passwordReg, setPasswordReg] = useState('');
-  const [phonenumberReg, setPhonenumberReg] = useState('');
-  const [genderReg, setGenderReg] = useState(null);
-  const [contactinfoReg, setContactinfoReg] = useState('');
-  const [userimageReg, setUserimageReg] = useState('');
-  const [bioReg, setBioReg] = useState('');
-  const [locationReg, setLocationReg] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  // const register = () => {
-  //   console.log("sakjhdka", genderReg)
-  //   let isMale = null
-  //   if (genderReg === "Female") {
-  //     isMale = false
-  //   } else if (genderReg === "Male") {
-  //     isMale = true
-  //   }
-  // };
-  /* from register */
-
-  const [firstnameReg, setFirstnameReg] = useState('');
-  const [lastnameReg, setLastnameReg] = useState('');
-  const [usernameReg, setUsernameReg] = useState('');
-  const [emailReg, setEmailReg] = useState('');
-  const [passwordReg, setPasswordReg] = useState('');
-  const [phonenumberReg, setPhonenumberReg] = useState('');
-  const [genderReg, setGenderReg] = useState(null);
-  const [contactinfoReg, setContactinfoReg] = useState('');
-  const [userimageReg, setUserimageReg] = useState('');
-  const [bioReg, setBioReg] = useState('');
-  const [locationReg, setLocationReg] = useState('');
-
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-
-  const register = () => {
-    console.log("sakjhdka", genderReg)
-    let isMale = null
-    if (genderReg === "Female") {
-      isMale = false
-    } else if (genderReg === "Male") {
-      isMale = true
-    }
-
-    console.log("isMale: ", isMale )
-    // Axios.post("http://localhost:3001/api/register", {
-    //   firstName: firstnameReg,
-    //   lastName: lastnameReg,
-    //   userName: usernameReg,
-    //   email: emailReg,
-    //   password: passwordReg,
-    //   phoneNumber: phonenumberReg,
-    //   gender: isMale,
-    //   // gender: genderReg,
-    //   contactInfo: contactinfoReg,
-    //   userImage: userimageReg,
-    //   bio: bioReg,
-    //   location: locationReg
-    // }).then((response) => {
-    //   console.log(response)
-    // })
-  }
-
-  const login = () => {
-    console.log("email, password", email, password)
-    //  Axios.post("http://localhost:3001/api/login", {
-    //   email: email,
-    //   password: password,
-    //  }).then((response) => {
-        // if (response.data.message) {
-        //   setLoginstatus(response.data.message)
-        // } else {
-        //   setLoginstatus(response.data[0].email)
-        // }
-    //    console.log(response.data)
-    //  })
-  }
 
   return (
     <div>
       <Header/>
-      <Login setEmail={setEmail} setPassword={setPassword} login={login}/>
-      <Resgister 
-        setFirstnameReg={setFirstnameReg} 
-        setLastnameReg={setLastnameReg}
-        setUsernameReg={setUsernameReg}
-        setEmailReg={setEmailReg}
-        setPasswordReg={setPasswordReg}
-        setPhonenumberReg={setPhonenumberReg}
-        setGenderReg={setGenderReg}
-        setContactinfoReg={setContactinfoReg}
-        setUserimageReg={setUserimageReg}
-        setBioReg={setBioReg}
-        setLocationReg={setLocationReg}
-        register={register} 
-      />
+      <Router>
+        <Routes>
 
+            <Route path="/login" element={<Login/>}></Route>
+            <Route path="/register" element={<Register/>}></Route>
+            <Route path="/preferences" element={<Preferences/>}></Route>
+            <Route path="/profile" element={<Profile/>}></Route>
+        </Routes>
+      </Router>
+
+      {/* <Preferences/> */}
+      {/* <Login /> */}
+      {/* <Resgister /> */}
       {/* <h1>{loginStatus}</h1> */}
+      {/* <Profile  /> */}
       {/* <MatchList
         key = {users[0]}
         users = {users[0]}
       /> */}
-
-
 
       {/* <DetailedProfile
         // hardcoded for testing
@@ -151,14 +63,10 @@ function App() {
         // users = {users[0][0]}
       /> */}
 
-
-
       {/* <Likes
         key = {users[0]}
         users = {users[0]}
       /> */}
-
-
 
       {/* <Main/> */}
 
@@ -178,7 +86,7 @@ function App() {
         phone_number = {users[0][0].phone_number}
       /> */}
 
-      <EditProfile 
+      {/* <EditProfile 
         // REGULAR PROPS. using method 1 from detailed profile
         key = {users[0][0]}
         first_name = {users[0][0].first_name}
@@ -203,10 +111,7 @@ function App() {
         setUserimageReg={setUserimageReg}
         setBioReg={setBioReg}
         setLocationReg={setLocationReg}
-
-
-
-      />
+      /> */}
 
 
     </div>
