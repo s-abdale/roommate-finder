@@ -31,8 +31,15 @@ function App() {
 
             <Route path="/login" element={<Login/>}></Route>
             <Route path="/register" element={<Register/>}></Route>
-            <Route path="/preferences" element={<Preferences/>}></Route>
+            <Route path="/" element={<Main/>}></Route>
+
             <Route path="/profile" element={<Profile/>}></Route>
+            <Route path="/preferences" element={<Preferences/>}></Route>
+            <Route path="/editProfile" element={<EditProfile/>}></Route>
+
+            <Route path="/likes" element={<Likes key = {users[0]} users = {users[0]}/>}></Route>
+
+            <Route path="/matchList" element={<MatchList key = {users[0]} users = {users[0]}/>}></Route>
         </Routes>
       </Router>
 
