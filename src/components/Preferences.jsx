@@ -24,7 +24,7 @@ export default function Preferences() {
 
     //console.log("isMale: ", isMale )
 
-    axios.post("/api/userPreferences", {
+    axios.post("/api/user/preferences", {
       male: male,
       female: female,
       other: other,

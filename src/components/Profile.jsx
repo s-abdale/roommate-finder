@@ -40,7 +40,7 @@ export default function Profile(props) {
   // const [locationReg, setLocationReg] = useState('');
 
   useEffect(() => {
-    axios.get("/api/userProfile", {
+    axios.get("/api/user/profile", {
       // first_name: firstnameReg,
       // last_name: lastnameReg,
       // email: emailReg,
