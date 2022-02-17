@@ -27,9 +27,9 @@ export default function EditProfile(){
   const [phonenumberEdit, setPhonenumberEdit] = useState('');
   const [genderEdit, setGenderEdit] = useState(null);
   const [contactinfoEdit, setContactinfoEdit] = useState('');
-  // const [userimageEdit, setUserimageEdit] = useState('');
+  const [userimageEdit, setUserimageEdit] = useState('');
   const [bioEdit, setBioEdit] = useState('');
-  // const [locationEdit, setLocationEdit] = useState('');
+  const [locationEdit, setLocationEdit] = useState('');
 
 
   const edit = () => {
@@ -50,6 +50,8 @@ export default function EditProfile(){
       gender: isMale,
       contact_info: contactinfoEdit,
       bio: bioEdit,
+      user_image: userimageEdit,
+      location: locationEdit,
     }).then((response) => {
       console.log(response.data)
       //redirect to new page.
@@ -73,10 +75,15 @@ export default function EditProfile(){
       setGenderEdit(profileData.gender);
       setContactinfoEdit(profileData.contact_info);
       setBioEdit(profileData.bio);
+
+      setUserimageEdit(profileData.user_image);
+      setLocationEdit(profileData.location);
     })
   }, [])
 
-
+/*
+{"profile":[{"first_name":"Mariah","last_name":"Carey","user_name":"MCarey","phone_number":"1020304050","email":"mcarey@gmail.com","contact_info":"@mariahCarey","user_image":"https://i.imgur.com/eBffHEo.jpeg","bio":"this is a bio","location":"Beverly Hills","gender":false}]}
+*/
 
 
 
@@ -107,6 +114,8 @@ export default function EditProfile(){
         <input type='text' value={phonenumberEdit}  name="phonenumberEdit" onChange={(e) => {setPhonenumberEdit(e.target.value)}} ></input>
         <br></br>
 
+
+        {/* change to radio? */}
         <label>Gender:
           <input type="text" value={genderEdit}  placeholder="Gender" list="browsers" name="genderEdit" onChange={(e) => {setGenderEdit(e.target.value)}}/>    
         </label>
@@ -130,9 +139,30 @@ export default function EditProfile(){
           <label>Bio</label>
           <input type='text' value={bioEdit}  name="bioEdit" onChange={(e) => {setBioEdit(e.target.value)}}></input>
           <br></br>
+
+          /* ---------------------------------------- */
+
+          <label>location</label>
+          <input value={locationEdit}  name="locationEdit" onChange={(e) => {setLocationEdit(e.target.value)}}></input>
+          <br></br>
+
+          <label>image</label>
+          <input value={`${userimageEdit}`}  name="userimageEdit" onChange={(e) => {setUserimageEdit(e.target.value)}}></input>
+          <br></br>
+
+          
           <button type='submit' onClick={edit}> Update </button>
+
+
+
+
+
+
         </form>
 
+
+
+        
     </section>
   );
 };

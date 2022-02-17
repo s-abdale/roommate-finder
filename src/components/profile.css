@@ -16,3 +16,7 @@
   justify-content: space-between;
   /* width: 70vw; */
 }
+
+.user_image {
+  width: 300px;
+}
