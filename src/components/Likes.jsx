@@ -1,10 +1,12 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import axios from "axios";
 
 // import { Button } from 'react-native';
 
 
-import DetailedProfile from './DetailedProfile';
+// import DetailedProfile from './DetailedProfile';
+import SimpleProfile from './SimpleProfile';
+
 
 import TinderCard from 'react-tinder-card'
 // https://github.com/3DJakob/react-native-tinder-card-demo/blob/master/src/examples/Simple.js
@@ -14,31 +16,54 @@ import './likes.css';
 
 const alreadyRemoved = [];
 
-export default function Likes(props) {
-  const {users} = props;
+
+
+
+
+export default function Likes() {
+  // const {users} = props;
 
 
   const [lastDirection, setLastDirection] = useState();
 
+  // axios
+  const [likes, setLikes] = useState([])
+
+  useEffect(() => {
+    axios.get("/api/roomies", {
+    })
+    .then(response => {
+      const allProfiles = response.data
+      // console.log(profileData)
+      console.log("inside: ", allProfiles)
+      setLikes(allProfiles)
+    })
+  }, [])
+
 
 /* -------------------------------------- */
-  const swiped = (direction, nameToDelete) => {
-    // console.log('removing: ' + nameToDelete);
+  const swiped = (direction, user_id) => {
+    // console.log('removing: ' + id);
     setLastDirection(direction);
-    console.log(`🔥 moving ${nameToDelete} ${direction}`);
+    console.log(`🔥 moving ${user_id} ${direction}`);
+    if (direction === 'right') {
+      axios.post("/api/roomies", {
+        user_id
+      })
+    }
   } 
-  const outOfFrame = (name) => {
-    console.log(`🧯 ${name} left the screen!`);
+  const outOfFrame = (user_id) => {
+    console.log(`🧯 ${user_id} left the screen!`);
   } // expand here with axios calls
 /* -------------------------------------- */
 
 
 
-  const childRefs = useMemo(() => Array(users.length).fill(0).map(i => React.createRef()), []);
+  const childRefs = useMemo(() => Array(likes.length).fill(0).map(i => React.createRef()), []);
 
   const swipe = (dir) => {
 
-    const cardsLeft = users.filter(singleLikee => !alreadyRemoved.includes(singleLikee.email))
+    const cardsLeft = likes.filter(singleLikee => !alreadyRemoved.includes(singleLikee.email))
 
     
     if (cardsLeft.length) { // if there are users present ...
@@ -47,44 +72,41 @@ export default function Likes(props) {
       const toBeRemoved = cardsLeft[cardsLeft.length - 1].email // Find the card object to be removed
       // console.log(`to be removed: ${toBeRemoved}`);
 
-      const index = users.map(singleLikee => singleLikee.email).indexOf(toBeRemoved) // Find the index of which to make the reference to
+      const index = likes.map(singleLikee => singleLikee.email).indexOf(toBeRemoved) // Find the index of which to make the reference to
       // console.log(`index to be removed: ${index}`);
 
       alreadyRemoved.push(toBeRemoved) // Make sure the next card gets removed next time if this card do not have time to exit the screen
-      childRefs[index].current.swipe(dir) // Swipe the card! 🚨🚨🚨 THIS PART IS BROKEN 🚨🚨🚨
+      childRefs[index].current.swipe(dir) // Swipe the card! 
       console.log(`after: ${cardsLeft.length}`);
     }
   }
 
 
 
-  const parsedLikeesItem = users.map((singleLikee, index) => {
+  const parsedLikeesItem = likes.map((singleLikee, index) => {
 
-    const name = (`${singleLikee.first_name} ${singleLikee.last_name}`);
 
-    //do singleLikee.id 
     return (
       <div className='card-container'>
         <TinderCard 
-          key={singleLikee.name} 
+          key={singleLikee.user_name} 
           ref={childRefs[index]}
           onSwipe={(dir) => {
             if ((dir === 'left') || (dir === 'right')) {
-              swiped(dir, name); 
+              swiped(dir, singleLikee.user_id); 
+              
             }
           }}
           preventSwipe={['up', 'down']}
-          onCardLeftScreen={() => outOfFrame(name)}
+          // onCardLeftScreen={() => outOfFrame(name)}
         >
           <div className='card'>
-            <DetailedProfile
-              first_name = {singleLikee.first_name}
-              last_name = {singleLikee.last_name}
-              location = {singleLikee.location}
+            <SimpleProfile
+              
               bio = {singleLikee.bio}
-              email = {singleLikee.email}
-              phone_number = {singleLikee.phone_number}
+              user_name = {singleLikee.user_name}
             />
+
           </div>
         </TinderCard>
       </div>
