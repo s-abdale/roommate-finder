@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './profile.css';
 import axios from 'axios';
+import {BrowserRouter as Router, Link , Route, Routes, useNavigate} from 'react-router-dom';
 
 // compare to detailed profile props
 /* include:
@@ -82,7 +83,7 @@ export default function Profile(props) {
         <img src="https://www.pikpng.com/pngl/m/80-805068_my-profile-icon-blank-profile-picture-circle-clipart.png" alt="blue and white clipart profile picture" className='user-pfp'/>
       </div> */}
 
-      <div> <img src={user.user_image} ></img></div>
+      <div> <img src={user.user_image} className='user_image'></img></div>
 
       <div className='profile-text'>
         <div>Name: {user.first_name}, {user.last_name}</div>
@@ -97,6 +98,13 @@ export default function Profile(props) {
         {/* <div>{genderIs}</div> */}
         {/* <div>Preferences</div> */}      
       </div>
+
+      <button
+        className='big-buttons'
+      >
+        <Link to="/editProfile">Edit Profile</Link>
+      </button>
+
     </section>
   );
 };
