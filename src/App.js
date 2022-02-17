@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import {BrowserRouter as Router, Link , Route, Routes, useNavigate} from 'react-router-dom';
 import axios from "axios";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 // import { Button } from './components/Button.jsx';
