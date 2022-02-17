@@ -35,7 +35,7 @@ export default function Likes() {
     .then(response => {
       const allProfiles = response.data
       // console.log(profileData)
-      console.log("inside: ", allProfiles)
+      // console.log("inside: ", allProfiles)
       setLikes(allProfiles)
     })
   }, [])
@@ -54,30 +54,42 @@ export default function Likes() {
   } 
   const outOfFrame = (user_id) => {
     console.log(`🧯 ${user_id} left the screen!`);
-  } // expand here with axios calls
+  }
 /* -------------------------------------- */
 
 
 
-  const childRefs = useMemo(() => Array(likes.length).fill(0).map(i => React.createRef()), []);
-
+  const childRefs = useMemo(() => Array(likes.length).fill(0).map(i => React.createRef()), [likes]);
+  // console.log(likes.length)
+  // console.log({childRefs});
   const swipe = (dir) => {
 
-    const cardsLeft = likes.filter(singleLikee => !alreadyRemoved.includes(singleLikee.email))
+    const cardsLeft = likes.filter(singleLikee => !alreadyRemoved.includes(singleLikee.user_id))
+    console.log({likes});
+    console.log({alreadyRemoved});
 
     
     if (cardsLeft.length) { // if there are users present ...
-      // console.log(`before: ${cardsLeft.length}`);
+      console.log(`before: ${cardsLeft.length}`);
 
-      const toBeRemoved = cardsLeft[cardsLeft.length - 1].email // Find the card object to be removed
+      const toBeRemoved = cardsLeft[cardsLeft.length - 1].user_id // Find the card object to be removed
       // console.log(`to be removed: ${toBeRemoved}`);
 
-      const index = likes.map(singleLikee => singleLikee.email).indexOf(toBeRemoved) // Find the index of which to make the reference to
+      const index = likes.map(singleLikee => singleLikee.user_id).indexOf(toBeRemoved) // Find the index of which to make the reference to
       // console.log(`index to be removed: ${index}`);
 
       alreadyRemoved.push(toBeRemoved) // Make sure the next card gets removed next time if this card do not have time to exit the screen
+
+      // console.log(likes);
+      // console.log(`---`);
+      // console.log(childRefs);
+      // console.log(`---`);
+      // console.log(childRefs[index]);
+      // console.log(index);
+      console.log(alreadyRemoved, 'alreadyRemoved string');
+
       childRefs[index].current.swipe(dir) // Swipe the card! 
-      console.log(`after: ${cardsLeft.length}`);
+      // console.log(`after: ${cardsLeft.length}`);
     }
   }
 
@@ -115,8 +127,8 @@ export default function Likes() {
 
 
   // note: MUST use callback function if you don't want the onClick to run immediately
-  const clickingLeft = () => console.log('clicking left');
-  const clickingRight = () => console.log('clicking right');
+  // const clickingLeft = () => console.log('clicking left');
+  // const clickingRight = () => console.log('clicking right');
 
   return (
 
@@ -129,7 +141,8 @@ export default function Likes() {
       </article>
 
       <button 
-        onClick={clickingLeft} 
+        // onClick={clickingLeft} 
+        onClick={() => swipe('left')}
         title='Swipe left!' 
       > 
         Left 
