@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import axios from "axios";
+import {BrowserRouter as Router, Link , Route, Routes} from 'react-router-dom';
+
 
 // import { Button } from 'react-native';
 
@@ -160,7 +162,9 @@ export default function Likes() {
 
       {lastDirection ? <p>You swiped {lastDirection}</p> : <p />}
 
-      <button className='go-to-matches'>CLICK TO SEE YOUR MATCHES</button>
+      <button className='go-to-matches'>
+        <Link to="/matchList">CLICK TO SEE YOUR MATCHES</Link>
+      </button>
 
     </section>
 
