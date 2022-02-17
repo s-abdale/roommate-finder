@@ -40,8 +40,11 @@ export default function Profile(props) {
   // const [bioReg, setBioReg] = useState('');
   // const [locationReg, setLocationReg] = useState('');
 
+  // figure out how to pass user id
+
+  // `/api/user/profile/${user.id}`
   useEffect(() => {
-    axios.get("/api/user/profile", {
+    axios.get(`/api/user/profile/`, {
       // first_name: firstnameReg,
       // last_name: lastnameReg,
       // email: emailReg,
