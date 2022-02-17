@@ -32,8 +32,9 @@ function App() {
      }).then((response) => {
       //console.log(response.data)
       setresUser(response.data)
-     })
+    })
   }
+  
 
   const onLogout = () => {
     axios.post("/api/logout", {
@@ -48,7 +49,7 @@ function App() {
       <Router>
         <Header user={resUser} onLogout={onLogout}/>
         <Routes>
-            <Route path="/login" element={<Login login={login} />}></Route>
+            <Route path="/login" element={<Login login={login}/>}></Route>
             <Route path="/register" element={<Register/>}></Route>
             <Route path="/" element={<Main/>}></Route>
 
