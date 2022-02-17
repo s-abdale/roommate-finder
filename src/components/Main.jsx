@@ -39,7 +39,7 @@ export default function Main(props) {
         // insert route to page
         // onClick={onfindRoomies}
       >
-        <Link to="/roomies">Find Roomies</Link>
+        <Link to="/likes">Find Roomies</Link>
       </button>
 
       <button
