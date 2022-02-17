@@ -2,32 +2,33 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import './login.css';
 
-export default function Login() {
+export default function Login({login}) {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const login = () => {
-    console.log("email, password", email, password)
-     axios.post("/api/login", {
-      email: email,
-      password: password,
-     }).then((response) => {
-        // if (response.data.message) {
-        //   setLoginstatus(response.data.message)
-        // } else {
-        //   setLoginstatus(response.data[0].email)
-        // }
-       console.log(response.data)
-     })
-  }
+  // const login = () => {
+  //   console.log("email, password", email, password)
+  //    axios.post("/api/login", {
+  //     email: email,
+  //     password: password,
+  //    }).then((response) => {
+  //       // if (response.data.message) {
+  //       //   setLoginstatus(response.data.message)
+  //       // } else {
+  //       //   setLoginstatus(response.data[0].email)
+  //       // }
+      
+  //      console.log(response.data)
+  //    })
+  // }
 
   return (
       <form onSubmit={event => event.preventDefault()} autoComplete="off" className='login'>
         <h1>Login</h1>
         <input type='text' placeholder='Email...' onChange={(e) => {setEmail(e.target.value)}}></input>
         <input type='password' placeholder='Password...' onChange={(e) => {setPassword(e.target.value)}}></input>
-        <button onClick={login}> Login </button>
+        <button onClick={() => login(email, password)}> Login </button>
       </form>
     
   );
