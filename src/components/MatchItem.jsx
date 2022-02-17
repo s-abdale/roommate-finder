@@ -7,7 +7,10 @@ export default function MatchItem(props) {
   // console.log(props);
 
   return (
-    <article className='match-item'>
+    <article 
+      className='match-item'
+      onClick={props.onClick}
+    >
       <div className='image-cropper'>
         {/* rectangle image test */}
         {/* <img src="https://m.media-amazon.com/images/M/MV5BMTc0NDQzODAwNF5BMl5BanBnXkFtZTYwMzUzNTk3._V1_UY1200_CR112,0,630,1200_AL_.jpg" className='small-pfp'/> */}

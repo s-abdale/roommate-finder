@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import axios from "axios";
 
 // import { Button } from 'react-native';
 
@@ -68,13 +69,13 @@ export default function Likes(props) {
           key={singleLikee.name} 
           ref={childRefs[index]}
           onSwipe={(dir) => {
-            swiped(dir, name); 
-          }} 
-          
+            if ((dir === 'left') || (dir === 'right')) {
+              swiped(dir, name); 
+            }
+          }}
+          preventSwipe={['up', 'down']}
           onCardLeftScreen={() => outOfFrame(name)}
         >
-
-
           <div className='card'>
             <DetailedProfile
               first_name = {singleLikee.first_name}
@@ -85,8 +86,6 @@ export default function Likes(props) {
               phone_number = {singleLikee.phone_number}
             />
           </div>
-
-
         </TinderCard>
       </div>
     );
