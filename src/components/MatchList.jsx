@@ -3,6 +3,7 @@ import axios from "axios";
 import MatchItem from './MatchItem';
 import './matchList.css';
 import { prepareUserData, getBasicInfo } from '../helpers/userHelpers';
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -11,7 +12,8 @@ export default function MatchList(props) {
   //console.log(props);
 
   const [matches, setMatches] = useState([])
-  
+  const navigate = useNavigate();
+
   useEffect(() => {
     axios.get("/api/matches", {
     })
@@ -26,12 +28,15 @@ export default function MatchList(props) {
 
 
   const parsedMatchListItem = matches.map((singleMatch) => {
+    console.log(singleMatch.id);
     return (
       <MatchItem
+        key = {`match-item-${singleMatch.id}`}
         id = {singleMatch.id}
         first_name = {singleMatch.first_name}
         last_name = {singleMatch.last_name}
         user_image = {singleMatch.user_image}
+        onClick = {() => navigate(`/detailed-profile/${singleMatch.id}`)}
       />
     );
   })

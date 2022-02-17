@@ -38,6 +38,9 @@ function App() {
             <Route path="/likes" element={<Likes key = {users[0]} users = {users[0]}/>}></Route>
 
             <Route path="/matchList" element={<MatchList key = {users[0]} users = {users[0]}/>}></Route>
+
+            <Route path="/detailed-profile/:id" element={<DetailedProfile />}></Route>
+
         </Routes>
       </Router>
 

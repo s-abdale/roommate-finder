@@ -1,42 +1,49 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import './detailedProfile.css';
+import {useParams, useNavigate} from 'react-router-dom';
 
 
 
-export default function DetailedProfile(props) {
-  // works - METHOD 1
-  const { first_name, last_name, location, bio, email, phone_number} = props;
-  // console.log(props);
+export default function DetailedProfile() {
+  const {id} = useParams();
 
+  const [user, setUser] = useState({})
 
-  // works - METHOD 2
-  // const {users} = props;
-  // console.log(users.id)
+  useEffect(() => {
+    axios.get(`/api/user/profile/${id}`, {
+    })
+    .then(response => {
+      const profileData = response.data.profile[0]
+      console.log(profileData)
+      setUser(profileData)
+    })
+  }, [])
+
 
   return (
     <section className='detailed-profile'>
 
-      {/* rectangle image*/}
-      {/* <img src="https://m.media-amazon.com/images/M/MV5BMTc0NDQzODAwNF5BMl5BanBnXkFtZTYwMzUzNTk3._V1_UY1200_CR112,0,630,1200_AL_.jpg" className='user-pfp'/> */}
+
 
       {/* square image*/}
-      <img src="https://www.pikpng.com/pngl/m/80-805068_my-profile-icon-blank-profile-picture-circle-clipart.png" alt="blue and white clipart profile picture" className='user-pfp'/>
+      <img src={user.user_image} className='user-pfp'/>
 
 
 
 
       <article className='user-details'>
-        <span>{first_name} {last_name}</span>
+        <span>{user.first_name} {user.last_name}</span>
         {/* works - METHOD 1 */}
 
-        <p>{location}</p>
-        <p>{bio}</p>
+        <p>{user.location}</p>
+        <p>{user.bio}</p>
 
         <br/>
         
         <p>CONTACT INFO:</p>
-        <p>{email}</p>
-        <p>Tel.: {phone_number}</p>
+        <p>{user.email}</p>
+        <p>Tel.: {user.phone_number}</p>
 
         {/* works - METHOD 2 */}
         {/* <span>{users.first_name} {users.last_name}</span>
