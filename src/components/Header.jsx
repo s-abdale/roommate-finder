@@ -1,21 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import {BrowserRouter as Router, Link , Route, Routes, useNavigate} from 'react-router-dom';
+import axios from 'axios'
 import { Button } from './Button';
 import './header.css';
 
 const onLogout = () => {
-  window.location.href = "/logout"
+  //window.location.href = "/logout"
 }
 
 const onLogin = () => {
-  window.location.href = "/login"
+  //window.location.href = "/login"
 }
 const onCreateAccount = () => {
-  window.location.href = "/register"
+  //window.location.href = "/register"
 }
 
-export const Header = ({user}) => (
+export const Header = ({user, onLogout}) => (
   <header>
     <div className="wrapper">
       <div>
@@ -43,21 +44,23 @@ export const Header = ({user}) => (
           <Button size="small" onClick={onLogout} label="Log out" />
         ) : (
           <>
-            <Button size="small" onClick={onLogin} label="Log in" />
-            <Button primary size="small" onClick={onCreateAccount} label="Sign up" />
+            {/* <Button size="small"  label="Log in" /> */}
+            <Link to="/login">Log In</Link>
+            <Link to="/register">Sign up</Link>
+            {/* <Button primary size="small" onClick={onCreateAccount} label="Sign up" /> */}
           </>
         )}
       </div>
     </div>
   </header>
 );
-
-// Header.propTypes = {
-//   user: PropTypes.shape({}),
-//   onLogin: PropTypes.func.isRequired,
-//   onLogout: PropTypes.func.isRequired,
-//   onCreateAccount: PropTypes.func.isRequired,
-// };
+//<Link to="/login">Log In</Link>
+Header.propTypes = {
+  user: PropTypes.shape({}),
+  //onLogin: PropTypes.func.isRequired,
+  onLogout: PropTypes.func.isRequired,
+  //onCreateAccount: PropTypes.func.isRequired,
+};
 
 Header.defaultProps = {
   user: null,

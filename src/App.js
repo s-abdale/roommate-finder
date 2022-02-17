@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import {BrowserRouter as Router, Link , Route, Routes, useNavigate} from 'react-router-dom';
-
+import axios from "axios";
 import './App.css';
 
 // import { Button } from './components/Button.jsx';
@@ -22,12 +22,33 @@ const someName = "something"
 function App() {
   const users = prepareUserData(tempUserData);
 
+  const [resUser, setresUser ] = useState(null)
+
+  const login = (email, password) => {
+    console.log("email, password", email, password)
+     axios.post("/api/login", {
+      email: email,
+      password: password,
+     }).then((response) => {
+      //console.log(response.data)
+      setresUser(response.data)
+     })
+  }
+
+  const onLogout = () => {
+    axios.post("/api/logout", {
+    }).then((response) => {
+      console.log(response.data)
+      setresUser(null)
+    })
+  }
+
   return (
     <div>
-      <Header/>
       <Router>
+        <Header user={resUser} onLogout={onLogout}/>
         <Routes>
-            <Route path="/login" element={<Login/>}></Route>
+            <Route path="/login" element={<Login login={login} />}></Route>
             <Route path="/register" element={<Register/>}></Route>
             <Route path="/" element={<Main/>}></Route>
 
