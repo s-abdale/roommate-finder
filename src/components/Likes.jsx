@@ -44,13 +44,15 @@ export default function Likes() {
 
 
 /* -------------------------------------- */
-  const swiped = (direction, user_id) => {
+  const swiped = (direction, user_id, user) => {
     // console.log('removing: ' + id);
+    console.log(user_id);
     setLastDirection(direction);
     console.log(`🔥 moving ${user_id} ${direction}`);
     if (direction === 'right') {
       axios.post("/api/roomies", {
         user_id
+        
       })
     }
   } 
@@ -67,12 +69,12 @@ export default function Likes() {
   const swipe = (dir) => {
 
     const cardsLeft = likes.filter(singleLikee => !alreadyRemoved.includes(singleLikee.user_id))
-    console.log({likes});
-    console.log({alreadyRemoved});
+    // console.log({likes});
+    // console.log({alreadyRemoved});
 
     
     if (cardsLeft.length) { // if there are users present ...
-      console.log(`before: ${cardsLeft.length}`);
+      // console.log(`before: ${cardsLeft.length}`);
 
       const toBeRemoved = cardsLeft[cardsLeft.length - 1].user_id // Find the card object to be removed
       // console.log(`to be removed: ${toBeRemoved}`);
@@ -81,14 +83,6 @@ export default function Likes() {
       // console.log(`index to be removed: ${index}`);
 
       alreadyRemoved.push(toBeRemoved) // Make sure the next card gets removed next time if this card do not have time to exit the screen
-
-      // console.log(likes);
-      // console.log(`---`);
-      // console.log(childRefs);
-      // console.log(`---`);
-      // console.log(childRefs[index]);
-      // console.log(index);
-      console.log(alreadyRemoved, 'alreadyRemoved string');
 
       childRefs[index].current.swipe(dir) // Swipe the card! 
       // console.log(`after: ${cardsLeft.length}`);
@@ -107,7 +101,8 @@ export default function Likes() {
           ref={childRefs[index]}
           onSwipe={(dir) => {
             if ((dir === 'left') || (dir === 'right')) {
-              swiped(dir, singleLikee.user_id); 
+              swiped(dir, singleLikee.user_id, singleLikee);
+              // it's noticing the right user ... 
               
             }
           }}
