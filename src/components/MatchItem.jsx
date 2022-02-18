@@ -4,7 +4,6 @@ import './matchItem.css';
 
 export default function MatchItem(props) {
   const {id, first_name, last_name, user_image} = props;
-  // console.log(props);
 
   return (
     <article 
@@ -20,7 +19,6 @@ export default function MatchItem(props) {
       </div>
 
       {/* <div> <img src={user_image} ></img></div> */}
-
 
       <div className='user-details'>
         <i>{first_name}</i>

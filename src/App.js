@@ -63,9 +63,11 @@ function App() {
             <Route path="/preferences" element={<Preferences/>}></Route>
             <Route path="/editProfile" element={<EditProfile userID = {userID}/>}></Route>
 
-            <Route path="/likes" element={<Likes key = {users[0]} users = {users[0]}/>}></Route>
+            {/* <Route path="/likes" element={<Likes key = {users[0]} users = {users[0]}/>}></Route> */}
+            <Route path="/likes" element={<Likes />}></Route>
 
-            <Route path="/matchList" element={<MatchList key = {users[0]} users = {users[0]}/>}></Route>
+            {/* <Route path="/matchList" element={<MatchList key = {users[0]} users = {users[0]}/>}></Route> */}
+            <Route path="/matchList" element={<MatchList />}></Route>
 
             <Route path="/detailed-profile/:id" element={<DetailedProfile />}></Route>
 

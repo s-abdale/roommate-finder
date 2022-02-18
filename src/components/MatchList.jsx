@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 
 
-export default function MatchList(props) {
+export default function MatchList() {
   //const {users} = props;
   //console.log(props);
 
