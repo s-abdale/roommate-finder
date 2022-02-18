@@ -108,6 +108,10 @@ export default function Profile(props) {
         <Link to="/editProfile">Edit Profile</Link>
       </button>
 
+      <button className='big-buttons'>
+        <Link to="/preferences">Edit Preferences</Link>
+      </button>
+
     </section>
   );
 };
