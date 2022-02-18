@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
-
+import {BrowserRouter as Router, Link , Route, Routes, useNavigate} from 'react-router-dom';
 import './preferences.css';
 
 export default function Preferences() {
@@ -76,7 +76,10 @@ export default function Preferences() {
             <option value="true"/> 
             <option value="false"/> 
         </datalist>
-        <button type='submit' onClick={savePref}> Save Preferences </button>
+        <Link to="/profile">
+          <button type='submit' onClick={savePref}> Save Preferences </button>
+        </Link>
+        
       </form>
   )
 };
