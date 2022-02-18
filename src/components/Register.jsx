@@ -1,8 +1,11 @@
 import React, {useState, useEffect} from "react";
+import {BrowserRouter as Router, Link , Route, Routes, useNavigate} from 'react-router-dom';
 import axios from "axios";
 import './register.css';
 
-export default function Resgister() {
+export default function Resgister({setresUser, setUserID}) {
+
+  const navigate = useNavigate()
 
     const [firstnameReg, setFirstnameReg] = useState('');
     const [lastnameReg, setLastnameReg] = useState('');
@@ -41,10 +44,14 @@ export default function Resgister() {
         location: locationReg
       }).then((response) => {
         console.log(response.data)
-        //redirect to new page.
+        localStorage.setItem("user", response.data.id )
+        setUserID(response.data.id)
+        setresUser(response.data)
+        //redirect to new page
+        navigate("/")
       })
     }
-  console.log("setfirstname  ....", setFirstnameReg)
+  //console.log("setfirstname  ....", setFirstnameReg)
   return (
     <form onSubmit={event => event.preventDefault()} autoComplete="off" className='register'>
       <h1>Registration</h1>
@@ -79,7 +86,9 @@ export default function Resgister() {
       <input type='text' placeholder='Bio'  name="bioReg" onChange={(e) => {setBioReg(e.target.value)}}></input>
       <label>Location</label>
       <input type='text' placeholder='Location' name="locationReg" onChange={(e) => {setLocationReg(e.target.value)}}></input>
-      <button type='submit' onClick={register}> Register </button>
+      <button type='submit' onClick={register}> Register
+        {/* <Link to="/">Register</Link> */}
+      </button>
   </form>
     
   );
