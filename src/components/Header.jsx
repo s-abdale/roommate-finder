@@ -1,10 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import {BrowserRouter as Router, Link , Route, Routes, useNavigate} from 'react-router-dom';
+import axios from 'axios'
 import { Button } from './Button';
 import './header.css';
 
-export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
+const onLogout = () => {
+  //window.location.href = "/logout"
+}
+
+const onLogin = () => {
+  //window.location.href = "/login"
+}
+const onCreateAccount = () => {
+  //window.location.href = "/register"
+}
+
+export const Header = ({user, onLogout}) => (
   <header>
     <div className="wrapper">
       <div>
@@ -24,27 +36,32 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => (
             />
           </g>
         </svg>
-        <h1>Acme</h1>
+        <h1>Roomies</h1>
       </div>
       <div>
         {user ? (
-          <Button size="small" onClick={onLogout} label="Log out" />
+          <>
+            <button onClick={onLogout}> <Link to="/">Log Out</Link> </button>
+            <button><Link to="/">Home</Link></button>
+            </>
         ) : (
           <>
-            <Button size="small" onClick={onLogin} label="Log in" />
-            <Button primary size="small" onClick={onCreateAccount} label="Sign up" />
+            {/* <Button size="small"  label="Log in" /> */}
+            <button><Link to="/login">Log In</Link></button>
+            <button><Link to="/register">Sign up</Link></button>
+            {/* <Button primary size="small" onClick={onCreateAccount} label="Sign up" /> */}
           </>
         )}
       </div>
     </div>
   </header>
 );
-
+//<Link to="/login">Log In</Link>
 Header.propTypes = {
   user: PropTypes.shape({}),
-  onLogin: PropTypes.func.isRequired,
+  //onLogin: PropTypes.func.isRequired,
   onLogout: PropTypes.func.isRequired,
-  onCreateAccount: PropTypes.func.isRequired,
+  //onCreateAccount: PropTypes.func.isRequired,
 };
 
 Header.defaultProps = {
