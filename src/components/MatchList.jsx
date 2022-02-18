@@ -4,6 +4,9 @@ import MatchItem from './MatchItem';
 import './matchList.css';
 import { prepareUserData, getBasicInfo } from '../helpers/userHelpers';
 import { useNavigate } from "react-router-dom";
+// import ReactDOM from 'react-dom';
+import Button from '@mui/material/Button';
+
 
 
 
@@ -20,7 +23,7 @@ export default function MatchList() {
     .then(response => {
       const allProfiles = response.data.profile
       // console.log(profileData)
-      console.log("inside: ", allProfiles)
+      // console.log("inside: ", allProfiles)
       setMatches(allProfiles)
     })
   }, [])
@@ -28,7 +31,7 @@ export default function MatchList() {
 
 
   const parsedMatchListItem = matches.map((singleMatch) => {
-    console.log(singleMatch.id);
+    // console.log(singleMatch.id);
     return (
       <MatchItem
         key = {`match-item-${singleMatch.id}`}
@@ -45,6 +48,7 @@ export default function MatchList() {
   return (
     <section className='match-list'>
       <h1>List of matches</h1>
+      <Button variant="contained">Hello World</Button>
       <article className='match-items'>
         {parsedMatchListItem}
       </article>
