@@ -20,9 +20,9 @@ import { dblClick } from "@testing-library/user-event/dist/click";
 import ReactDOM from 'react-dom';
 
 
-const someName = "something"
 function App() {
-  const users = prepareUserData(tempUserData);
+  // const users = prepareUserData(tempUserData);
+  
   const [userID, setUserID] = useState(localStorage.getItem("user"))
   const [resUser, setresUser ] = useState(null)
 
@@ -58,7 +58,7 @@ function App() {
         <Header user={userID} onLogout={onLogout}/>
         <Routes>
             <Route path="/login" element={<Login login={login}/>}></Route>
-            <Route path="/register" element={<Register/>}></Route>
+            <Route path="/register" element={<Register setresUser={setresUser} setUserID={setUserID}/>}></Route>
             <Route path="/" element={<Main/>}></Route>
 
             <Route path="/profile" element={<Profile userID = {userID}/>}></Route>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
+import {BrowserRouter as Router, Link , Route, Routes, useNavigate} from 'react-router-dom';
 import '../profile.css';
 // import {useNavigate} from 'react-router-dom';
 
@@ -150,8 +151,10 @@ export default function EditProfile(props){
           <input value={`${userimageEdit}`}  name="userimageEdit" onChange={(e) => {setUserimageEdit(e.target.value)}}></input>
           <br></br>
 
+          <Link to="/profile">
+            <button type='submit' onClick={edit}> Update </button>
+          </Link>
           
-          <button type='submit' onClick={edit}> Update </button>
 
 
 
