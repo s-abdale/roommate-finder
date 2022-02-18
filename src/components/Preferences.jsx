@@ -46,7 +46,7 @@ export default function Preferences() {
       <form onSubmit={event => event.preventDefault()} autoComplete="off" className='preferences'>
         <h1>Preferences</h1>
         <label>Male:
-         <input type="text" value={male} list="browseMale" name="Pref" onChange={(e) => {setMale(e.target.value)}}/>    
+         <input type="text"  value={male} list="browseMale"  name="Pref" onChange={(e) => {setMale(e.target.value)}}/>    
         </label>
         <datalist id="browseMale">
             <option value="true"/> 
@@ -54,12 +54,11 @@ export default function Preferences() {
         </datalist>
 
         <label>Female:
-         <input type="text" value={female} list="browseFemale" name="Pref" onChange={(e) => {setFemale(e.target.value)}}/>    
+         <input type="text"  value={female} list="browseFemale" name="Pref" onChange={(e) => {setFemale(e.target.value)}}/>    
         </label>
         <datalist id="browseFemale">
             <option value="true"/> 
             <option value="false"/> 
-            <option value="adsaldfalse"/> 
         </datalist>
 
         <label>Other:

@@ -41,11 +41,10 @@ export const Header = ({user, onLogout}) => (
       </div>
       <div>
         {user ? (
-          //CHANGE THIS TO LINK ONCE ROUTER DOM IS IMPORTED//
-          // <Button size="small" onClick={onLogout} label="Log out" />
-          <button onClick={onLogout}>
-            <Link to="/">Log Out</Link>
-          </button>
+          <>
+            <button onClick={onLogout}> <Link to="/">Log Out</Link> </button>
+            <button><Link to="/">Home</Link></button>
+            </>
         ) : (
           <>
             {/* <Button size="small"  label="Log in" /> */}
