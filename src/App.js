@@ -21,7 +21,7 @@ import { dblClick } from "@testing-library/user-event/dist/click";
 const someName = "something"
 function App() {
   const users = prepareUserData(tempUserData);
-
+  const [userID, setUserID] = useState(localStorage.getItem("user"))
   const [resUser, setresUser ] = useState(null)
 
   const login = (email, password) => {
@@ -30,16 +30,22 @@ function App() {
       email: email,
       password: password,
      }).then((response) => {
-      //console.log(response.data)
+      localStorage.setItem("user", response.data.id )
+      setUserID(response.data.id)
       setresUser(response.data)
     })
   }
   
+  console.log(localStorage.getItem("user"))
+  console.log(resUser);
 
   const onLogout = () => {
     axios.post("/api/logout", {
     }).then((response) => {
       console.log(response.data)
+      localStorage.clear()
+      setUserID(null)
+      // localStorage.setItem("user", null )
       setresUser(null)
     })
   }
@@ -47,15 +53,15 @@ function App() {
   return (
     <div>
       <Router>
-        <Header user={resUser} onLogout={onLogout}/>
+        <Header user={userID} onLogout={onLogout}/>
         <Routes>
             <Route path="/login" element={<Login login={login}/>}></Route>
             <Route path="/register" element={<Register/>}></Route>
             <Route path="/" element={<Main/>}></Route>
 
-            <Route path="/profile" element={<Profile/>}></Route>
+            <Route path="/profile" element={<Profile userID = {userID}/>}></Route>
             <Route path="/preferences" element={<Preferences/>}></Route>
-            <Route path="/editProfile" element={<EditProfile/>}></Route>
+            <Route path="/editProfile" element={<EditProfile userID = {userID}/>}></Route>
 
             <Route path="/likes" element={<Likes key = {users[0]} users = {users[0]}/>}></Route>
 

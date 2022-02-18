@@ -30,7 +30,7 @@ export default function Login({login}) {
         <input type='text' placeholder='Email...' onChange={(e) => {setEmail(e.target.value)}}></input>
         <input type='password' placeholder='Password...' onChange={(e) => {setPassword(e.target.value)}}></input>
         <button onClick={() => login(email, password)}> 
-        <Link to="/">Login</Link>
+          <Link to="/">Login</Link>
         </button>
       </form>
     

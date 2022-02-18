@@ -6,7 +6,7 @@ import '../profile.css';
 
 
 
-export default function EditProfile(){
+export default function EditProfile(props){
 
   // const navigate = useNavigate();
   // console.log(navigate);
@@ -63,7 +63,7 @@ export default function EditProfile(){
   const [user, setUser] = useState({});
 
   useEffect(() => {
-    axios.get("/api/user/profile", {
+    axios.get(`/api/user/profile/${props.userID}`, {
     })
     .then(response => {
       const profileData = response.data.profile[0];
