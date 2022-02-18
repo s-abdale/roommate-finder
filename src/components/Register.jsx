@@ -67,15 +67,14 @@ export default function Resgister({setresUser, setUserID}) {
       <input type='password' placeholder='Password...' name="passwordReg" onChange={(e) => {setPasswordReg(e.target.value)}} ></input>
       <label>Phone Number</label>
       <input type='text' placeholder='Phone Number' name="phonenumberReg" onChange={(e) => {setPhonenumberReg(e.target.value)}} ></input>
-      <label>Gender:
-        <input type="text"  placeholder="Gender" list="browsers" name="genderReg" onChange={(e) => {setGenderReg(e.target.value)}}/>    
-      </label>
-        <datalist id="browsers">
-            <option value="Male"/> 
-            <option value="Female"/> 
-            <option value="They/Them"/> 
-            {/* <option value="Prefer not to say"/> */}
-        </datalist>
+      
+      <label>Gender:</label>
+        <select  placeholder="Gender" list="browsers" name="genderReg" onChange={(e) => {setGenderReg(e.target.value)}}>
+            <option value="Male">Male</option> 
+            <option value="Female">Female</option>
+            <option value="They/Them">They/Them</option>
+        </select>  
+
       {/* <label>Gender</label>
       <input type='text' placeholder='Select Gender' onChange={(e) => {setGenderReg(e.target.value)}} ></input> */}
       <label>Contact Info</label>
