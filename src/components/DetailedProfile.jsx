@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './detailedProfile.css';
 import {useParams, useNavigate} from 'react-router-dom';
+import CardMedia from '@mui/material/CardMedia';
+import Card from '@mui/material/Card';
 
 
 
@@ -22,12 +24,12 @@ export default function DetailedProfile() {
 
 
   return (
-    <section className='detailed-profile'>
+    <Card className='detailed-profile'>
 
 
 
       {/* square image*/}
-      <img src={user.user_image} className='user-pfp'/>
+      <CardMedia src={user.user_image} className='user-pfp' component="img"/>
 
 
 
@@ -57,6 +59,6 @@ export default function DetailedProfile() {
         <p>{users.email}</p>
         <p>Tel.: {users.phone_number}</p> */}
       </article>
-    </section>
+    </Card>
   );
 };
