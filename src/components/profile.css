@@ -1,12 +1,11 @@
 .main-body{
   display: flex;
-  flex-direction: column;
-  align-items: space-around;
+  /* flex-direction: column; */
+  /* align-items: space-around; */
   /* background-color: cornsilk; */
 }
 
-.profile-text{
-  /* background-color: green; */
+/* .profile-text{
   border: 1px solid lightgrey;
   background-color: white;
   padding: 5%;
@@ -14,9 +13,15 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  /* width: 70vw; */
-}
+} */
 
 .user_image {
-  width: 300px;
+  /* width: 50px; */
+  height:40vh;
+}
+
+.main-card {
+  /* width: 80vw; */
+  height: fit-content;
+  overflow: scroll;
 }
