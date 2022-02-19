@@ -48,7 +48,7 @@ export default function MatchList() {
   return (
     <section className='match-list'>
       <h1>List of matches</h1>
-      <Button variant="contained">Hello World</Button>
+      {/* <Button variant="contained">Hello World</Button> */}
       <article className='match-items'>
         {parsedMatchListItem}
       </article>
