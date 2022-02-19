@@ -5,16 +5,6 @@
   /* background-color: cornsilk; */
 }
 
-/* .profile-text{
-  border: 1px solid lightgrey;
-  background-color: white;
-  padding: 5%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-} */
-
 .user_image {
   /* width: 50px; */
   height:40vh;
@@ -24,4 +14,5 @@
   /* width: 80vw; */
   height: fit-content;
   overflow: scroll;
+  /* margin-bottom: 5vh; */
 }
