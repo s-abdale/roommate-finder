@@ -1,22 +1,18 @@
 .main-body{
   display: flex;
-  flex-direction: column;
-  align-items: space-around;
+  /* flex-direction: column; */
+  /* align-items: space-around; */
   /* background-color: cornsilk; */
 }
 
-.profile-text{
-  /* background-color: green; */
-  border: 1px solid lightgrey;
-  background-color: white;
-  padding: 5%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  /* width: 70vw; */
+.user_image {
+  /* width: 50px; */
+  height:40vh;
 }
 
-.user_image {
-  width: 300px;
+.main-card {
+  /* width: 80vw; */
+  height: fit-content;
+  overflow: scroll;
+  /* margin-bottom: 5vh; */
 }

@@ -2,6 +2,10 @@ import React, { useEffect, useState } from 'react';
 import './profile.css';
 import axios from 'axios';
 import {BrowserRouter as Router, Link , Route, Routes, useNavigate} from 'react-router-dom';
+import Button from '@mui/material/Button';
+import CardMedia from '@mui/material/CardMedia';
+import Card from '@mui/material/Card';
+
 
 // compare to detailed profile props
 /* include:
@@ -82,13 +86,10 @@ export default function Profile(props) {
       <h3 className='page-header'>PROFILE INFORMATION</h3>
 
 
-      {/* <div className='profile-image'>
-        <img src="https://www.pikpng.com/pngl/m/80-805068_my-profile-icon-blank-profile-picture-circle-clipart.png" alt="blue and white clipart profile picture" className='user-pfp'/>
-      </div> */}
+      <Card className='main-card'>
+        <CardMedia src={user.user_image} className='user_image' component="img"/>
 
-      <div> <img src={user.user_image} className='user_image'></img></div>
-
-      <div className='profile-text'>
+        
         <div>Name: {user.first_name}, {user.last_name}</div>
         <div>Email: {user.email}</div>
         <div>Phone Number: {user.phone_number}</div>
@@ -98,19 +99,19 @@ export default function Profile(props) {
         <div>Bio: {user.bio}</div>
         <div>Location: {user.location}</div>
 
-        {/* <div>{genderIs}</div> */}
-        {/* <div>Preferences</div> */}      
-      </div>
+      </Card>
 
-      <button
+
+      <Button variant="contained"
         className='big-buttons'
       >
         <Link to="/editProfile">Edit Profile</Link>
-      </button>
+      </Button>
 
-      <button className='big-buttons'>
+      <Button variant="contained" className='big-buttons'
+      >
         <Link to="/preferences">Edit Preferences</Link>
-      </button>
+      </Button>
 
     </section>
   );

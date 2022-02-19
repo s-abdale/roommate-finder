@@ -17,6 +17,8 @@ import Preferences from "./components/Preferences";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import { dblClick } from "@testing-library/user-event/dist/click";
+import ReactDOM from 'react-dom';
+
 
 function App() {
   // const users = prepareUserData(tempUserData);
@@ -36,8 +38,8 @@ function App() {
     })
   }
   
-  console.log(localStorage.getItem("user"))
-  console.log(resUser);
+  // console.log(localStorage.getItem("user"))
+  // console.log(resUser);
 
   const onLogout = () => {
     axios.post("/api/logout", {
