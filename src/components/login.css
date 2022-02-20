@@ -66,3 +66,11 @@ body, html, .App, #root, .outer {
 .forgot-password a {
   color: #167bff;
 }
+
+.loginDiv {
+  padding-left: 115px;
+}
+
+.LoginHeading{
+  color: blueviolet
+}

@@ -11,14 +11,12 @@ import Likes from './components/Likes.jsx';
 import Main from './components/Main.jsx';
 import Profile from './components/Profile.jsx';
 import EditProfile from './components/edit-profile/EditProfile.jsx';
-import tempUserData from './components/tempUserData';
-import {prepareUserData} from './helpers/userHelpers';
+// import tempUserData from './components/tempUserData';
+// import {prepareUserData} from './helpers/userHelpers';
 import Preferences from "./components/Preferences";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import { dblClick } from "@testing-library/user-event/dist/click";
-import ReactDOM from 'react-dom';
-
 
 function App() {
   // const users = prepareUserData(tempUserData);
@@ -38,8 +36,8 @@ function App() {
     })
   }
   
-  // console.log(localStorage.getItem("user"))
-  // console.log(resUser);
+  console.log(localStorage.getItem("user"))
+  console.log(resUser);
 
   const onLogout = () => {
     axios.post("/api/logout", {
@@ -52,8 +50,9 @@ function App() {
     })
   }
 
+  //style={{ backgroundImage: `url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/221808/sky.jpg")`}}
   return (
-    <div style={{ backgroundImage: `url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/221808/sky.jpg")`}}>
+    <div>
       <Router>
         <Header user={userID} onLogout={onLogout}/>
         <Routes>

@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import {BrowserRouter as Router, Link , Route, Routes, useNavigate} from 'react-router-dom';
 import './login.css';
+import { FormGroup } from '@mui/material';
 
 export default function Login({login}) {
 
@@ -9,10 +10,11 @@ export default function Login({login}) {
   const [password, setPassword] = useState('')
 
   return (
+    <div className='loginDiv'>
     <form onSubmit={event => event.preventDefault()} autoComplete="off" className='login'>
         {/* <p style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/221808/sky.jpg');"></p> */}
 
-        <h2>Login</h2>
+        <h2 className='LoginHeading'>Login</h2>
         
         <div className="form-group">
           {/* <label>Email</label> */}
@@ -37,6 +39,7 @@ export default function Login({login}) {
           {/* <p className="forgot-password text-right">Forgot <a href="#">password?</a></p> */}
 
       </form>
+      </div>
     
   );
 };
