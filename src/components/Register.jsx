@@ -52,43 +52,49 @@ export default function Resgister({setresUser, setUserID}) {
       })
     }
   //console.log("setfirstname  ....", setFirstnameReg)
+  //https://wallpaperaccess.com/full/57168.jpg 
+  // https://wallpaperaccess.com/full/833312.png
+  //https://i.pinimg.com/originals/74/cd/f8/74cdf85c9f3ee94b77b4da0b81d9f17f.jpg
+  //https://wallpaperaccess.com/full/1098481.jpg
   return (
-    <form onSubmit={event => event.preventDefault()} autoComplete="off" className='register'>
-      <h1>Registration</h1>
-      <label>First Name</label>
-      <input type='text' placeholder='First Name' name="firstnameReg" onChange={(e) => {setFirstnameReg(e.target.value)}}></input>
-      <label>Last Name</label>
-      <input type='text' placeholder='Last Name' name="lastnameReg"onChange={(e) => {setLastnameReg(e.target.value)}} ></input>
-      <label>User Name</label>
-      <input type='text' placeholder='Username' name="usernameReg" onChange={(e) => {setUsernameReg(e.target.value)}} ></input>
-      <label>Email</label>
-      <input type='email' placeholder='Email' name="emailReg" onChange={(e) => {setEmailReg(e.target.value)}}></input>
-      <label>Password</label>
-      <input type='password' placeholder='Password...' name="passwordReg" onChange={(e) => {setPasswordReg(e.target.value)}} ></input>
-      <label>Phone Number</label>
-      <input type='text' placeholder='Phone Number' name="phonenumberReg" onChange={(e) => {setPhonenumberReg(e.target.value)}} ></input>
-      
-      <label>Gender:</label>
-        <select  placeholder="Gender" list="browsers" name="genderReg" onChange={(e) => {setGenderReg(e.target.value)}}>
-            <option value="Male">Male</option> 
-            <option value="Female">Female</option>
-            <option value="They/Them">They/Them</option>
-        </select>  
+    <div className="registerDiv" style={{ backgroundImage: `url("https://wallpaperaccess.com/full/1098481.jpg")`}}>
+      <form onSubmit={event => event.preventDefault()} autoComplete="off" className='register'>
+        {/* <h1>Registration</h1> */}
+        <label>First Name</label>
+         <input type='text' placeholder='First Name' name="firstnameReg" onChange={(e) => {setFirstnameReg(e.target.value)}}></input>
+        <label>Last Name</label>
+          <input type='text' placeholder='Last Name' name="lastnameReg"onChange={(e) => {setLastnameReg(e.target.value)}} ></input>
+        <label>User Name</label>
+          <input type='text' placeholder='Username' name="usernameReg" onChange={(e) => {setUsernameReg(e.target.value)}} ></input>
+        <label>Email</label>
+          <input type='email' placeholder='Email' name="emailReg" onChange={(e) => {setEmailReg(e.target.value)}}></input>
+        <label>Password</label>
+         <input type='password' placeholder='Password...' name="passwordReg" onChange={(e) => {setPasswordReg(e.target.value)}} ></input>
+        <label>Phone Number</label>
+          <input type='text' placeholder='Phone Number' name="phonenumberReg" onChange={(e) => {setPhonenumberReg(e.target.value)}} ></input>
+        
+        <label>Gender:</label>
+          <select  placeholder="Gender" list="browsers" name="genderReg" onChange={(e) => {setGenderReg(e.target.value)}}>
+              <option value="Male">Male</option> 
+              <option value="Female">Female</option>
+              <option value="They/Them">They/Them</option>
+          </select>  
 
-      {/* <label>Gender</label>
-      <input type='text' placeholder='Select Gender' onChange={(e) => {setGenderReg(e.target.value)}} ></input> */}
-      <label>Contact Info</label>
-      <input type='text' placeholder='Contact Info' name="contactinfoReg" onChange={(e) => {setContactinfoReg(e.target.value)}}></input>
-      <label>Upload image</label>
-      <input type='text' placeholder='Upload Image' name="userimageReg" onChange={(e) => {setUserimageReg(e.target.value)}}></input>
-      <label>Bio</label>
-      <input type='text' placeholder='Bio'  name="bioReg" onChange={(e) => {setBioReg(e.target.value)}}></input>
-      <label>Location</label>
-      <input type='text' placeholder='Location' name="locationReg" onChange={(e) => {setLocationReg(e.target.value)}}></input>
-      <button type='submit' onClick={register}> Register
-        {/* <Link to="/">Register</Link> */}
-      </button>
-  </form>
+        {/* <label>Gender</label>
+        <input type='text' placeholder='Select Gender' onChange={(e) => {setGenderReg(e.target.value)}} ></input> */}
+        <label>Contact Info</label>
+         <input type='text' placeholder='Contact Info' name="contactinfoReg" onChange={(e) => {setContactinfoReg(e.target.value)}}></input>
+        <label>Upload image</label>
+          <input type='text' placeholder='Upload Image' name="userimageReg" onChange={(e) => {setUserimageReg(e.target.value)}}></input>
+        <label>Bio</label>
+          <input type='text' placeholder='Bio'  name="bioReg" onChange={(e) => {setBioReg(e.target.value)}}></input>
+        <label>Location</label>
+          <input type='text' placeholder='Location' name="locationReg" onChange={(e) => {setLocationReg(e.target.value)}}></input>
+        <button type='submit' onClick={register}> Register
+          {/* <Link to="/">Register</Link> */}
+        </button>
+    </form>
+  </div>
     
   );
 };
