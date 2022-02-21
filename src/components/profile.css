@@ -15,12 +15,14 @@
 
 .MuiCardMedia-root{
   /* object-position: 50% 0%; */
-  height: 15rem;
+  height: 250px;
 }
 
 .MuiCard-root	{
-  min-height: 60vh;
+  /* min-height: 40vh; */
   /* overflow: scroll; */
+  /* min-height: 30rem; */
+  height: unset;
 }
 
 .MuiCardContent-root {

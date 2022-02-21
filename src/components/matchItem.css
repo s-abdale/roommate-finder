@@ -6,7 +6,13 @@
 }
 
 .MuiCardMedia-media {
-  object-fit: contain; /* doesn't work */
+  /* object-fit: contain; */
   object-position: 50% 0%;
-  height: 15rem;
+  /* height: 15rem; */
+}
+
+.user-name-matchItem{
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
 }

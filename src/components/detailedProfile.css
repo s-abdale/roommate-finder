@@ -1,28 +1,21 @@
 .detailed-profile {
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between; */
-
   /* padding: 5%; */
   margin: 5%;
   margin-top: 5vh;
 
-  min-height: 60vh;
-  /* background-color: whitesmoke;
-  border-radius: 1vh;
-  border: solid 1px steelblue; */
+  /* min-height: 60vh; */
+  /* overflow: scroll; */
 
 }
 
 .user-details {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  /* overflow: scroll; */
-  height: fit-content;
-  padding-right: 10%;
-  padding-left: 10%;
+  /* align-items: center; */
+  /* height: fit-content; */
+  /* padding-right: 10%; */
+  /* padding-left: 10%; */
+  padding: 25px;
 }
 .user-pfp {
   background-color: gainsboro;
@@ -33,5 +26,12 @@
 
 p{
   margin: 3px;
-  font-size: 1.2rem;
+  /* font-size: 1.2rem; */
+}
+.icons-detailedProfile:hover{
+  color: #e84ca5;
+}
+
+table {
+  border-spacing: 0.5rem;
 }

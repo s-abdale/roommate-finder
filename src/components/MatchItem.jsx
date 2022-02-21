@@ -15,7 +15,7 @@ export default function MatchItem(props) {
 
       <CardMedia src={user_image} className='small-pfp' component="img"/>
 
-      <span>{first_name} {last_name}</span>
+      <span className="user-name-matchItem">{first_name} {last_name}</span>
 
     </Card>
   );
