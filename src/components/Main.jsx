@@ -2,53 +2,26 @@ import React, { useState } from 'react';
 import {BrowserRouter as Router, Link , Route, Routes} from 'react-router-dom';
 import './main.css';
 
-
+//https://wallpaperaccess.com/full/833312.png
+//style={{ backgroundImage: `url("https://wallpaperaccess.com/full/1098481.jpg")`}}
 
 export default function Main(props) {
 
-  // const onProfile = () => {
-  //   window.location.href = "/profile"
-  // }
-
-  // const onfindRoomies = () => {
-  //   window.location.href = "/roomies"
-  // }
-
-  // const onMatchList = () => {
-  //   window.location.href = "/matchList"
-  // }
-
   return (
 
+    <section className='main-body' style={{ backgroundImage: `url("https://wallpaperaccess.com/full/1098481.jpg")`}}>
 
-    <section className='main-body'>
+    <Link to="/profile">
+      <button className='big-buttons'>Profile</button>
+    </Link>
 
+    <Link to="/likes">
+      <button className='big-buttons'> Find Roomies </button>
+    </Link>
 
-   {/* <Link to="/profile"><button>Profile</button></Link> */}
-
-      <button
-        className='big-buttons'
-        // insert route to page
-        //onClick={onProfile}
-        >
-        <Link to="/profile">Profile</Link>
-      </button>
-
-      <button
-        className='big-buttons'
-        // insert route to page
-        // onClick={onfindRoomies}
-      >
-        <Link to="/likes">Find Roomies</Link>
-      </button>
-
-      <button
-        className='big-buttons'
-        // insert route to page
-        // onClick={onMatchList}
-      >
-        <Link to="/matchList">Matches</Link>
-      </button>
+    <Link to="/matchList">
+      <button className='big-buttons'> Matches </button>
+    </Link>
 
     </section>
   );

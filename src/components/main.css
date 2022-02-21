@@ -4,12 +4,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  height: 70vh;
+  /* height: 120vh; */
+  height: 92vh;
+  color: cadetblue;
 }
 
-.big-buttons {
-  /* background-color: cornflowerblue; */
-  /* border: none; */
+/* .big-buttons {
 
   background-color: white;
   border: 3px solid cornflowerblue;
@@ -19,9 +19,26 @@
   display: inline-block;
   font-size: 16px;
   transition-duration: 0.4s;
-  /* color: white; */
   width: 60vw;
   height: 20vw;
+} */
+
+.big-buttons {
+  background-color: cornflowerblue;
+  border: none;
+  background-color: white;
+  border: 3px solid #09d3ac;
+  border-radius: 237px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  transition-duration: 0.4s;
+  /* width: 42vw; */
+  /* height: 7vw; */
+  width: 65vw;
+  height: 19vw;
+  color: darkcyan;
 }
 
 
@@ -29,4 +46,21 @@
 .big-buttons:hover{
   background-color: #4CAF50;
   color: white;
+}
+
+@media all and (max-width: 375px) {
+  .main-body{
+    /* background-image: url(https://wallpaperaccess.com/full/1098481.jpg); */
+    height: 700px;
+    background-size: contain;
+    margin-top: -50px;
+  }
+
+  /* .main-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 92vh;
+  } */
 }

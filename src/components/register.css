@@ -1,0 +1,23 @@
+@media all and (max-width: 375px) {
+  .registerDiv{
+    /* background-image: url(https://wallpaperaccess.com/full/833312.png); */
+    height: 700px;
+    background-size: contain;
+  }
+
+  .register{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: larger;
+    color: snow;
+    font-family: cursive;
+    margin-top: -48px;
+    padding-top: 51px;
+  }
+
+  input[name="emailReg"] {
+    background: aqua;
+  }
+}
