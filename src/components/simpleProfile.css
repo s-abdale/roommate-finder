@@ -1,6 +1,6 @@
 .simple-profile {
-  height: 50vh;
-  width: 60vw;
+  /* height: 50vh;
+  width: 60vw; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,5 +11,10 @@
 .card-wrapper {
   display: flex;
   justify-content: center;
-  margin-top: 10vh;
+  /* margin-top: 10vh; */
+}
+
+.MuiCard-root {
+  height: 20rem;
+  width: 20rem;
 }

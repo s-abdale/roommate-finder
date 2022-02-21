@@ -2,6 +2,8 @@ import React, { useState, useEffect, useMemo } from 'react';
 import axios from "axios";
 import {BrowserRouter as Router, Link , Route, Routes} from 'react-router-dom';
 import Button from '@mui/material/Button';
+import Fab from '@mui/material/Fab';
+
 
 import SimpleProfile from './SimpleProfile';
 
@@ -96,37 +98,43 @@ export default function Likes() {
 
     <section className='likes-list'>
 
-      <p>List of likes</p>
+      {/* <p>List of likes</p> */}
 
       <article className='likes-items' >
         {parsedLikeesItem}
       </article>
 
       <div className='command-center'>
-        <Button variant="contained" 
-          onClick={() => swipe('left')}
-          title='Swipe left!' 
-        > 
-          Left 
-        </Button>
+        <div className='command-swipe'>
+          <Fab variant="extended" size="medium" color="primary" aria-label="add"
+            onClick={() => swipe('left')}
+            title='Swipe left!' 
+            className='button-swipe-left'
+          > 
+            Left 
+          </Fab>
 
-        <Button variant="contained" 
-          onClick={() => swipe('right')}
-          title='Swipe right!'
-        > 
-          Right 
-        </Button>
+          <Fab variant="extended" size="medium" color="primary" aria-label="add" 
+            onClick={() => swipe('right')}
+            title='Swipe right!'
+          > 
+            Right 
+          </Fab>
+        </div>
+
+        <div className='command-extras'>
+          <p>You swiped right!</p>
+
+          <Button variant="outlined">
+            <Link to="/matchList" className='go-to-matches'>Go to Matches</Link>
+          </Button>
+
+        </div>
 
 
-
-        <Button variant="outlined" className='go-to-matches'>
-          <Link to="/matchList">Go to Matches</Link>
-        </Button>
-
-        {/* <br></br> */}
-        
-        {/* {lastDirection ? <p>You swiped {lastDirection}</p> : <p />} */}
+        {/* {lastDirection ? <p className='last-swiped'>You swiped {lastDirection}</p> : <p className='last-swiped' />} */}
       </div>
+
 
     </section>
 
