@@ -3,6 +3,15 @@ import axios from "axios";
 import {BrowserRouter as Router, Link , Route, Routes, useNavigate} from 'react-router-dom';
 import './preferences.css';
 
+import FormLabel from '@mui/material/FormLabel';
+import FormControl from '@mui/material/FormControl';
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormHelperText from '@mui/material/FormHelperText';
+import Checkbox from '@mui/material/Checkbox';
+
+
+
 export default function Preferences() {
 
   const [male, setMale] = useState('');
@@ -22,6 +31,11 @@ export default function Preferences() {
       setPetFriendly(preferencesData.pet_friendly)
     })
   }, [])
+
+  console.log("set male:", setMale)
+  console.log("set female: ", setFemale)
+  console.log("set other: ", setOther)
+  console.log("set pet: ", setPetFriendly)
 
   const savePref = () => {
     console.log("male:", male)
@@ -43,44 +57,106 @@ export default function Preferences() {
 
   return (
 
-      <form onSubmit={event => event.preventDefault()} autoComplete="off" className='preferences'>
-        <h1>Preferences</h1>
-        <label>Male:
-         <input type="text"  value={male} list="browseMale"  name="Pref" onChange={(e) => {setMale(e.target.value)}}/>    
-        </label>
-        <datalist id="browseMale">
-            <option value="true"/> 
-            <option value="false"/> 
-        </datalist>
+    <form onSubmit={event => event.preventDefault()} autoComplete="off" className='preferences'>
+      {/* <h1>Preferences</h1> */}
 
-        <label>Female:
-         <input type="text"  value={female} list="browseFemale" name="Pref" onChange={(e) => {setFemale(e.target.value)}}/>    
-        </label>
-        <datalist id="browseFemale">
-            <option value="true"/> 
-            <option value="false"/> 
-        </datalist>
+      <FormControl 
+        component="fieldset" 
+        variant="standard"
+      >
+        <FormLabel component="legend">Select preferences</FormLabel>
 
-        <label>Other:
-         <input type="text" value={other}  list="browseOther" name="Pref" onChange={(e) => {setOther(e.target.value)}}/>    
-        </label>
-        <datalist id="browseOther">
-            <option value="true"/> 
-            <option value="false"/> 
-        </datalist>
+        <FormGroup>
+          
+          <FormControlLabel
+            control={
+              <Checkbox 
+                checked={male} 
+                onChange={(e) => {setMale(e.target.checked)}}
+                name="Male" 
+              />
+            }
+            label="Male"
+          />
 
-        <label>Pet Friendly:
-         <input type="text" value={petFriendly} list="browsePet" name="Pref" onChange={(e) => {setPetFriendly(e.target.value)}}/>    
-        </label>
-        <datalist id="browsePet">
-            <option value="true"/> 
-            <option value="false"/> 
-        </datalist>
-        <Link to="/profile">
-          <button type='submit' onClick={savePref}> Save Preferences </button>
-        </Link>
-        
-      </form>
+          <FormControlLabel
+            control={
+              <Checkbox 
+                checked={female} 
+                onChange={(e) => {setFemale(e.target.checked)}}
+                name="Female" 
+              />
+            }
+            label="Female"
+          />
+
+          <FormControlLabel
+            control={
+              <Checkbox 
+                checked={other} 
+                onChange={(e) => {setOther(e.target.checked)}}
+                name="They/Them" 
+              />
+            }
+            label="They/Them"
+          />
+
+          <FormControlLabel
+            control={
+              <Checkbox 
+                // checked={petFriendly} 
+                onChange={(e) => {setPetFriendly(e.target.checked)}}
+                // onChange={(e) => {console.log(e.target.checked)}}
+
+                name="PetFriendly" 
+              />
+            }
+            label="Pet friendly"
+          />
+        </FormGroup>
+      </FormControl>
+      
+      <br/>
+      <br/>
+
+
+
+      {/* <label>Male:
+        <input type="text"  value={male} list="browseMale"  name="Pref" onChange={(e) => {setMale(e.target.value)}}/>    
+      </label>
+      <datalist id="browseMale">
+          <option value="true"/> 
+          <option value="false"/> 
+      </datalist>
+
+      <label>Female:
+        <input type="text"  value={female} list="browseFemale" name="Pref" onChange={(e) => {setFemale(e.target.value)}}/>    
+      </label>
+      <datalist id="browseFemale">
+          <option value="true"/> 
+          <option value="false"/> 
+      </datalist>
+
+      <label>Other:
+        <input type="text" value={other}  list="browseOther" name="Pref" onChange={(e) => {setOther(e.target.value)}}/>    
+      </label>
+      <datalist id="browseOther">
+          <option value="true"/> 
+          <option value="false"/> 
+      </datalist>
+
+      <label>Pet Friendly:
+        <input type="text" value={petFriendly} list="browsePet" name="Pref" onChange={(e) => {setPetFriendly(e.target.value)}}/>    
+      </label>
+      <datalist id="browsePet">
+          <option value="true"/> 
+          <option value="false"/> 
+      </datalist> */}
+      <Link to="/profile">
+        <button type='submit' onClick={savePref}> Save Preferences </button>
+      </Link>
+      
+    </form>
   )
 };
 
