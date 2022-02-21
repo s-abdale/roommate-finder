@@ -1,18 +1,29 @@
 .main-body{
   display: flex;
-  /* flex-direction: column; */
-  /* align-items: space-around; */
-  /* background-color: cornsilk; */
 }
 
-.user_image {
-  /* width: 50px; */
+/* .user_image {
   height:40vh;
-}
+} */
 
 .main-card {
-  /* width: 80vw; */
-  height: fit-content;
+  /* min-height: 60vh; */
   overflow: scroll;
-  /* margin-bottom: 5vh; */
+}
+
+.MuiCardMedia-root{
+  object-position: 50% 0%;
+  height: 15rem;
+}
+
+.MuiCard-root	{
+  min-height: 60vh;
+  /* overflow: scroll; */
+}
+
+.MuiCardContent-root {
+  /* overflow-y: scroll; */
+  height: fit-content;
+  overflow-wrap: break-word;
+  /* background-color: aquamarine; */
 }

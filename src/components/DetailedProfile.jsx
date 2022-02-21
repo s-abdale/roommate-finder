@@ -28,15 +28,13 @@ export default function DetailedProfile() {
 
 
 
-      {/* square image*/}
       <CardMedia src={user.user_image} className='user-pfp' component="img"/>
 
 
-
+      {/* add icons to user details */}
 
       <article className='user-details'>
         <span>{user.first_name} {user.last_name}</span>
-        {/* works - METHOD 1 */}
 
         <p>{user.location}</p>
         <p>{user.bio}</p>
@@ -47,17 +45,6 @@ export default function DetailedProfile() {
         <p>{user.email}</p>
         <p>Tel.: {user.phone_number}</p>
 
-        {/* works - METHOD 2 */}
-        {/* <span>{users.first_name} {users.last_name}</span>
-
-        <p>{users.location}</p>
-        <p>{users.bio}</p>
-
-        <br/>
-        
-        <p>CONTACT INFO:</p>
-        <p>{users.email}</p>
-        <p>Tel.: {users.phone_number}</p> */}
       </article>
     </Card>
   );
