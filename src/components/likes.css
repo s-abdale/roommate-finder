@@ -20,19 +20,26 @@
   justify-content: flex-end;
   align-items: center;
   margin: 0.5rem;
-  height: 60vh;
+  height: 70vh;
 }
 
-/* .command-swipe {
+.command-swipe {
   display: flex;
-}
-.button-swipe-left {
-  margin-right: 5px;
-} */
+  justify-content: space-evenly;
+  width: 20rem;
 
+}
+
+/* .button-swipe-left{
+  margin-right: 15px;
+} */
 .command-extras {
   display: flex;
+  justify-content: space-evenly;
   flex-direction: column;
+  width: 20rem;
+  margin-top: 2rem;
+  align-items: center;
 }
 .go-to-matches {
   text-decoration: none;

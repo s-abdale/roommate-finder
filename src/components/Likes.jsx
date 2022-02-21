@@ -3,6 +3,8 @@ import axios from "axios";
 import {BrowserRouter as Router, Link , Route, Routes} from 'react-router-dom';
 import Button from '@mui/material/Button';
 import Fab from '@mui/material/Fab';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import CloseIcon from '@mui/icons-material/Close';
 
 
 import SimpleProfile from './SimpleProfile';
@@ -106,19 +108,21 @@ export default function Likes() {
 
       <div className='command-center'>
         <div className='command-swipe'>
-          <Fab variant="extended" size="medium" color="primary" aria-label="add"
+          <Fab size="medium" color="primary" aria-label="add"
             onClick={() => swipe('left')}
             title='Swipe left!' 
             className='button-swipe-left'
           > 
-            Left 
+            <FavoriteIcon/>
+            {/* Left  */}
           </Fab>
 
-          <Fab variant="extended" size="medium" color="primary" aria-label="add" 
+          <Fab size="medium" color="primary" aria-label="add" 
             onClick={() => swipe('right')}
             title='Swipe right!'
           > 
-            Right 
+            <CloseIcon/>
+            {/* Right  */}
           </Fab>
         </div>
 
