@@ -51,7 +51,7 @@ export default function Profile(props) {
 
 
   return (
-    <section className='main-body'>
+    <section className='main-body-Profile'>
       {/* <h3 className='page-header'>PROFILE INFORMATION</h3> */}
 
 

@@ -113,7 +113,7 @@ export default function EditProfile(props){
 
 
   return (
-    <section className='main-body'>
+    <section className='main-body-EditProfile'>
 
       <form onSubmit={event => event.preventDefault()} autoComplete="off" className='profile-text'>
 
