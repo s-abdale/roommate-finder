@@ -50,4 +50,5 @@ button + button {
   display: flex;
   flex-direction: row;
   text-decoration: none;
+  display: flex;
 }
