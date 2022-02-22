@@ -1,9 +1,14 @@
 /* .match-list{
-  border: solid green;
+  margin-top: 50px;
 } */
 .match-items{
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
+  padding-top: 50px;
 }
+
+/* .match-item{
+  border: solid 3px red;
+} */

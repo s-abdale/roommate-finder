@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Link , Route, Routes, useNavigate} from 'react-
 import axios from 'axios'
 import { Button } from './Button';
 import './header.css';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 const onLogout = () => {
   //window.location.href = "/logout"
@@ -28,14 +29,14 @@ export const Header = ({user, onLogout}) => (
       <div>
         {user ? (
           <>
-            <Link to="/"><button onClick={onLogout}>Log Out</button></Link>
+            <Link to="/"><button className='header-buttons' onClick={onLogout}><LogoutIcon fontSize='small'/></button></Link>
             {/* <Link to="/"><button>Home</button></Link> */}
             </>
         ) : (
           <>
             {/* <Button size="small"  label="Log in" /> */}
-            <Link to="/login"><button>Log In</button></Link>
-            <Link to="/register"><button>Sign up</button></Link>
+            <Link to="/login"><button className='header-buttons'>Log In</button></Link>
+            <Link to="/register"><button className='header-buttons'>Sign up</button></Link>
             {/* <Button primary size="small" onClick={onCreateAccount} label="Sign up" /> */}
           </>
         )}

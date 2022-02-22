@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import axios from "axios";
 import {BrowserRouter as Router, Link , Route, Routes} from 'react-router-dom';
+import './likes.css';
 import Button from '@mui/material/Button';
 import Fab from '@mui/material/Fab';
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -13,7 +14,18 @@ import SimpleProfile from './SimpleProfile';
 import TinderCard from 'react-tinder-card'
 // https://github.com/3DJakob/react-native-tinder-card-demo/blob/master/src/examples/Simple.js
 
-import './likes.css';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+  palette: {
+    secondary: {
+      main: '#E84CA5',
+    },
+
+    contrastThreshold: 3,
+    tonalOffset: 0.2,
+  },
+});
 
 
 
@@ -98,7 +110,7 @@ export default function Likes() {
 
   return (
 
-    <section className='likes-list'>
+    <ThemeProvider theme={theme} className='likes-list'>
 
       {/* <p>List of likes</p> */}
 
@@ -108,21 +120,22 @@ export default function Likes() {
 
       <div className='command-center'>
         <div className='command-swipe'>
-          <Fab size="medium" color="primary" aria-label="add"
+          <Fab size="medium" aria-label="add"
             onClick={() => swipe('left')}
             title='Swipe left!' 
             className='button-swipe-left'
-          > 
-            <FavoriteIcon/>
-            {/* Left  */}
-          </Fab>
-
-          <Fab size="medium" color="primary" aria-label="add" 
-            onClick={() => swipe('right')}
-            title='Swipe right!'
+            // color="disabled"
           > 
             <CloseIcon/>
-            {/* Right  */}
+          </Fab>
+
+          <Fab size="medium" aria-label="add" 
+            onClick={() => swipe('right')}
+            title='Swipe right!'
+            className='button-swipe-right'
+            color="secondary"
+          > 
+            <FavoriteIcon/>
           </Fab>
         </div>
 
@@ -134,13 +147,10 @@ export default function Likes() {
           </Button>
 
         </div>
-
-
-        {/* {lastDirection ? <p className='last-swiped'>You swiped {lastDirection}</p> : <p className='last-swiped' />} */}
       </div>
 
 
-    </section>
+    </ThemeProvider>
 
 
   );

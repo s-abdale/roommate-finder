@@ -52,7 +52,7 @@ function App() {
 
   //style={{ backgroundImage: `url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/221808/sky.jpg")`}}
   return (
-    <div>
+    <div className="app-main-body">
       <Router>
         <Header user={userID} onLogout={onLogout}/>
         <Routes>
