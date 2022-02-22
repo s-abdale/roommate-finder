@@ -1,13 +1,30 @@
 .main-body {
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around; */
+  /* height: 92vh; */
+  /* color: cadetblue; */
+  padding-top: 50px;
+  background-repeat: no-repeat;
+}
+
+.main-page-buttons-container {
+  height: 70vh;
+  margin-top: 50px;
+  padding: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  height: 92vh;
-  color: cadetblue;
-  padding-top: 50px;
+  justify-content: space-between;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  /* border: 0.5px solid rgba(255, 255, 255, 0.3); */
+  border-radius: 5px;
 }
-
 /* .big-buttons {
 
   background-color: white;
@@ -39,54 +56,27 @@
 
 }
 /* ---------------- */
-.button-17 {
+.main-page-big-buttons {
+  text-decoration: none;
   align-items: center;
-  appearance: none;
-  background-color: #fff;
-  border-radius: 24px;
-  border-style: none;
-  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+  background: #FFFFFF;
+  border: 0 solid #E2E8F0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   box-sizing: border-box;
-  color: #3c4043;
-  cursor: pointer;
+  color: #1A202C;
   display: inline-flex;
-  fill: currentcolor;
-  font-family: "Google Sans",Roboto,Arial,sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  height: 48px;
+  font-size: 1rem;
+  font-weight: 700;
+  height: 56px;
   justify-content: center;
-  letter-spacing: .25px;
-  line-height: normal;
-  max-width: 100%;
-  overflow: visible;
-  padding: 2px 24px;
-  position: relative;
-  text-align: center;
-  text-transform: none;
-  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  width: 65vw;
-  will-change: transform,opacity;
-  z-index: 0;
+  line-height: 24px;
+  overflow-wrap: break-word;
+  padding: 24px;
+  width: 12rem;
+  border-radius: 4px;
 }
+/* ---------------- */
 
-.button-17:hover {
-  background: #F6F9FE;
-  color: #174ea6;
-}
-
-.button-17:active {
-  box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
-  outline: none;
-}
-
-.button-17:focus {
-  outline: none;
-  border: 2px solid #4285f4;
-}
 
 
 /* mentor call - doesn't function on hover, only on click */
@@ -100,15 +90,15 @@
     /* background-image: url(https://wallpaperaccess.com/full/1098481.jpg); */
     height: 700px;
     background-size: contain;
-    margin-top: -50px;
+    /* margin-top: -50px; */
   }
 
   .main-body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    /* height: 92vh; */
+    /* justify-content: center; */
+    height: 100vh;
     color: cadetblue;
   }
 

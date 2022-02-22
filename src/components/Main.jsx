@@ -9,19 +9,21 @@ export default function Main(props) {
 
   return (
 
-    <section className='main-body' style={{ backgroundImage: `url("https://wallpaperaccess.com/full/1098481.jpg")`}}>
+    <section className='main-body' style={{ backgroundImage: `url("https://i.gifer.com/origin/11/112ad705e340107c20d9070f4ab26a03_w200.gif")`}}>
 
-    <Link to="/profile">
-      <button className='button-17'>Profile</button>
-    </Link>
+    <div className='main-page-buttons-container'>
+      <Link to="/profile">
+        <button className='main-page-big-buttons'>Profile</button>
+      </Link>
 
-    <Link to="/likes">
-      <button className='button-17'> Find Roomies </button>
-    </Link>
+      <Link to="/likes">
+        <button className='main-page-big-buttons'> Find Roomies </button>
+      </Link>
 
-    <Link to="/matchList">
-      <button className='button-17'> Matches </button>
-    </Link>
+      <Link to="/matchList">
+        <button className='main-page-big-buttons'> Matches </button>
+      </Link>
+    </div>
 
     </section>
   );
