@@ -109,23 +109,15 @@ export default function EditProfile(props){
     translatedGenderEdit = "They/Them"
   }
 
-//gif
-//https://pa1.narvii.com/7609/9cc5a08bae8a916f6e5791a1b1fe70cd3c1c5c0er1-288-480_hq.gif
 
-//https://mfiles.alphacoders.com/796/796853.jpg
-//https://www.androidauthority.com/wp-content/uploads/2021/10/Google-Pixel-3-Wallpaper-19.jpg
-//https://www.fonewalls.com/wp-content/uploads/2020/09/Vector-Train-Wallpaper-058.jpg
-//https://d1nxzqpcg2bym0.cloudfront.net/google_play/com.PixelArtCityWallpaper.supapowa/ef67cc1a-29e0-11e8-b73c-2b5845c03c7b/640
-//https://wallpapers.com/images/high/pixel-city-in-pink-aesthetic-rh4lxylscgkqas3c.jpg
-//style={{ backgroundImage: `url("https://pa1.narvii.com/7609/9cc5a08bae8a916f6e5791a1b1fe70cd3c1c5c0er1-288-480_hq.gif")`}}
-  
-return (
+
+
+  return (
     <section className='main-body-EditProfile'>
 
       <form onSubmit={event => event.preventDefault()} autoComplete="off" className='edit-profile-form'>
 
         <TextField
-        className='firstName'
           id="outlined-basic"
           label="First Name"
           variant="outlined"
@@ -137,21 +129,18 @@ return (
         <br/>
 
         <TextField
-        className='lastName'
           id="outlined-basic"
           label="Last Name"
           variant="outlined"
           margin="normal"
           type='text'  
           value={lastnameEdit} 
-          name="lastnameEdit"
-          onChange={(e) => {setLastnameEdit(e.target.value)}} 
+          name="lastnameEdit"onChange={(e) => {setLastnameEdit(e.target.value)}} 
         />
         <br/>
 
 
         <TextField
-        className='emailEdit'
           id="outlined-basic"
           label="Email"
           variant="outlined"
@@ -165,7 +154,6 @@ return (
 
         
         <TextField
-          className='phoneEdit'
           id="outlined-basic"
           label="Phone Number"
           variant="outlined"
@@ -196,7 +184,6 @@ return (
 
 
         <TextField
-        className='contactEdit'
           id="outlined-basic"
           label="Contact Info"
           variant="outlined"
@@ -210,7 +197,6 @@ return (
 
 
         <TextField
-        className='bioEdit'
           id="outlined-basic"
           label="Bio"
           variant="outlined"
@@ -225,7 +211,6 @@ return (
 
 
         <TextField
-        className='locationEdit'
           id="outlined-basic"
           label="Location"
           variant="outlined"
@@ -238,7 +223,6 @@ return (
 
 
         <TextField
-        className='imageEdit'
           id="outlined-basic"
           label="Profile Picture"
           variant="outlined"

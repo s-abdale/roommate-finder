@@ -28,7 +28,7 @@ export const Header = ({user, onLogout}) => (
         <Link to="/"><h1>Roomies</h1></Link>
         {/* <h1>Roomies</h1> */}
       </div>
-      <div>
+      <div className='header-buttons-container'>
         {user ? (
           <>
             <Link to="/">

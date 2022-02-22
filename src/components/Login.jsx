@@ -3,15 +3,14 @@ import axios from 'axios';
 import {BrowserRouter as Router, Link , Route, Routes, useNavigate} from 'react-router-dom';
 import './login.css';
 import { FormGroup } from '@mui/material';
-//https://i.gifer.com/origin/11/112ad705e340107c20d9070f4ab26a03_w200.gif
-//https://wallpaperaccess.com/full/833312.png
+
 export default function Login({login}) {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
   return (
-    <div className='loginDiv' style={{ backgroundImage: `url("https://i.gifer.com/origin/11/112ad705e340107c20d9070f4ab26a03_w200.gif")`}}>
+    <div className='loginDiv' style={{ backgroundImage: `url("https://wallpaperaccess.com/full/833312.png")`}}>
     <form onSubmit={event => event.preventDefault()} autoComplete="off" className='login'>
         {/* <p style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/221808/sky.jpg');"></p> */}
 
@@ -27,16 +26,11 @@ export default function Login({login}) {
           <input type='password'  className="form-control" placeholder='Enter Password' onChange={(e) => {setPassword(e.target.value)}}></input>
         </div>
 
-        {/* <div className="form-group">
-          <div className="custom-control custom-checkbox">
-              <input type="checkbox" className="custom-control-input" id="customCheck1" />
-              <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
-          </div>
-        </div>
-         */}
+        
+        
          <div className='LoginButtonDiv'>
         <Link to="/">
-          <button className="LoginBlock" onClick={() => login(email, password)}>Log In</button>
+          <button className="btn btn-dark btn-lg btn-block" onClick={() => login(email, password)}>Log In</button>
         </Link>
          </div>
           {/* <p className="forgot-password text-right">Forgot <a href="#">password?</a></p> */}

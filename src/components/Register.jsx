@@ -90,7 +90,7 @@ export default function Resgister({setresUser, setUserID}) {
           <input type='text' placeholder='Bio'  name="bioReg" onChange={(e) => {setBioReg(e.target.value)}}></input>
         <label>Location</label>
           <input type='text' placeholder='Location' name="locationReg" onChange={(e) => {setLocationReg(e.target.value)}}></input>
-        <button className="registerButton" type='submit' onClick={register}> Register
+        <button type='submit' onClick={register}> Register
           {/* <Link to="/">Register</Link> */}
         </button>
     </form>
