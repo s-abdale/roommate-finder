@@ -17,10 +17,6 @@ import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import PhoneIphoneRoundedIcon from '@mui/icons-material/PhoneIphoneRounded';
 import PersonPinOutlinedIcon from '@mui/icons-material/PersonPinOutlined';
 
-
-
-
-
 export default function Profile(props) {
   
   const [user, setUser] = useState({})

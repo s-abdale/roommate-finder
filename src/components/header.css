@@ -44,11 +44,14 @@ button + button {
 .header-buttons {
   border: none;
   background-color: white;
-  margin-right: 10px;
+  margin-left: 0.5rem;
   padding: 0.5rem;
   border-radius: 3px;
   display: flex;
   flex-direction: row;
   text-decoration: none;
+}
+
+.header-buttons-container {
   display: flex;
 }
