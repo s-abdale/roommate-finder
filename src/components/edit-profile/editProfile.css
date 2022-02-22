@@ -47,4 +47,43 @@
     width: 12rem;
     border-radius: 4px;
   }
+  .profile-text{
+    margin-top:390px;
+    padding-bottom: 20px;
+    color: aliceblue;
+  }
+
+  /* .firstName {
+    color:aliceblue;
+    align-items: center;
+    text-align: center; 
+  } */
+
+  /* .lastName {
+    align-items: center;
+  } */
+
+  /* .emailEdit {
+    align-items: center;
+  } */
+
+  /* .phoneEdit {
+    align-items: center;
+  } */
+
+  /* .contactEdit {
+    align-items: center;
+  } */
+
+  /* .bioEdit {
+    align-items: center;
+  } */
+
+  /* .locationEdit {
+    align-items: center;
+  } */
+
+  /* .imageEdit {
+    align-items: center;
+  } */
 }

@@ -6,6 +6,8 @@ import { Button } from './Button';
 import './header.css';
 import LogoutIcon from '@mui/icons-material/Logout';
 
+//import Button from '@mui/material/Button';
+//variant="contained"
 const onLogout = () => {
   //window.location.href = "/logout"
 }
