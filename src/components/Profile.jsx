@@ -52,7 +52,6 @@ export default function Profile(props) {
 
   return (
     <section className='main-body-Profile'>
-      {/* <h3 className='page-header'>PROFILE INFORMATION</h3> */}
 
 
       <Card className='main-card'>
@@ -71,17 +70,21 @@ export default function Profile(props) {
 
       </Card>
 
+      <div className='profile-page-button-container'>
 
-      <Button variant="contained"
-        className='big-buttons'
-      >
-        <Link to="/editProfile">Edit Profile</Link>
-      </Button>
+        <Link to="/editProfile">
+          <button className='profile-page-buttons'>
+            Edit Profile
+          </button>
+        </Link>
 
-      <Button variant="contained" className='big-buttons'
-      >
-        <Link to="/preferences">Edit Preferences</Link>
-      </Button>
+        <Link to="/preferences">
+          <button className='profile-page-buttons'> 
+            Edit Preferences
+          </button>
+        </Link>
+
+      </div>
 
     </section>
   );
