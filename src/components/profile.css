@@ -1,22 +1,28 @@
-.main-body-Profile{
+.main-body-profile{
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* .user_image {
-  height:40vh;
-} */
 
-.main-card {
+
+.main-card-profile {
   margin-top: 70px;
   margin-bottom: 10px;
   overflow: scroll;
 }
 
+.user-pfp {
+  background-color: gainsboro;
+  max-width: inherit;
+  /* max-height: 45vh; */
+  /* margin-bottom: 5vh; */
+}
+
 .MuiCardMedia-root{
-  /* object-position: 50% 0%; */
-  height: 250px;
+  max-height: 17rem;
+  max-width: 17rem;
+  margin: auto;
 }
 
 .MuiCard-root	{

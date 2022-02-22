@@ -1,11 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import './profile.css';
+// import './detailedProfile.css';
+
+
 import axios from 'axios';
 import {BrowserRouter as Router, Link , Route, Routes, useNavigate} from 'react-router-dom';
-import Button from '@mui/material/Button';
+
 import CardMedia from '@mui/material/CardMedia';
 import Card from '@mui/material/Card';
+import Button from '@mui/material/Button';
+// import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
+// icons
+import FmdGoodOutlinedIcon from '@mui/icons-material/FmdGoodOutlined';
+import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+import PhoneIphoneRoundedIcon from '@mui/icons-material/PhoneIphoneRounded';
+import PersonPinOutlinedIcon from '@mui/icons-material/PersonPinOutlined';
 
 
 
@@ -51,24 +61,45 @@ export default function Profile(props) {
 
 
   return (
-    <section className='main-body-Profile'>
+    <section className='main-body-profile'>
 
+      <Card className='main-card-profile'>
 
-      
-      {/* <Card className='main-card'>
-        <CardMedia src={user.user_image} className='user_image' component="img"/>
+        <CardMedia src={user.user_image} className='user-pfp' component="img"/>
 
-        <CardContent>
-          <div>Name: {user.first_name}, {user.last_name}</div>
-          <div>Email: {user.email}</div>
-          <div>Phone Number: {user.phone_number}</div>
-          <div>Contact Info: {user.contact_info}</div>
-          <div>Bio: {user.bio}</div>
-          <div>Location: {user.location}</div>
-        </CardContent>
+        <article className='user-details'>
 
-      </Card> */}
+          <table className='user-details-table'>
+            <tr>
+              {/* <td> </td> */}
+              <th colspan="2" className='user-details-table-fullName'>{user.first_name} {user.last_name}</th>
+            </tr>
 
+            <tr>
+              <td><FmdGoodOutlinedIcon className='icons-detailedProfile' color="disabled"/></td>
+              <td>{user.location}</td>
+            </tr>
+
+            <tr>
+              <td><PersonPinOutlinedIcon className='icons-detailedProfile' color="disabled"/></td>
+              <td>{user.bio}</td>
+            </tr>
+
+            <tr>
+              <td><EmailOutlinedIcon className='icons-detailedProfile' color="disabled"/></td>
+              <td>{user.email}</td>
+            </tr>
+
+            <tr>
+              <td><PhoneIphoneRoundedIcon className='icons-detailedProfile' color="disabled"/></td>
+              <td>{user.phone_number}</td>
+            </tr>
+          </table>
+        
+        </article>
+        
+      </Card>
+    
       <div className='profile-page-button-container'>
 
         <Link to="/editProfile">
