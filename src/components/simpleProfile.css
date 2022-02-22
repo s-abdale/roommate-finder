@@ -1,6 +1,8 @@
 .simple-profile {
   /* height: 50vh;
   width: 60vw; */
+
+  height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,13 +10,30 @@
   /* margin: 15px; */
 }
 
-.card-wrapper {
+.card-wrapper-simple-profile{
   display: flex;
   justify-content: center;
   /* margin-top: 10vh; */
+  height: 20rem;
 }
 
 .MuiCard-root {
   /* height: 20rem; */
   width: 20rem;
 }
+
+/*
+  all pages:
+    look for solid background
+  likes:
+    margin top -> increase it
+    margin bottom -> decrease space between buttons and cards
+    priority: change the go to matches button
+    add margin under last swiped
+    stretch: look in to styling cards further
+  
+  
+
+
+
+*/
