@@ -9,14 +9,22 @@
 @media all and (max-width: 375px) {
 
   .main-body-EditProfile{
-    display: flex;
-    height: 700px;
+    /* color: cadetblue; */
+
     background-size: contain;
-    margin-top: -50px;
+    margin-top: 80px;
+    /* background-color: darkseagreen; */
+
+    display: flex;
+    justify-content: center;
+    
+  }
+
+  .edit-profile-form {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    /* height: 92vh; */
-    color: cadetblue;
+    justify-content: center;
+    /* background-color: aquamarine; */
   }
 }
