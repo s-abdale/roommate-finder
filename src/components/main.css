@@ -88,8 +88,8 @@
 @media all and (max-width: 375px) {
   .main-body{
     /* background-image: url(https://wallpaperaccess.com/full/1098481.jpg); */
-    height: 700px;
-    background-size: contain;
+    height: 718px;
+    background-size: cover;
     /* margin-top: -50px; */
   }
 

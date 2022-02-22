@@ -80,14 +80,14 @@
 
 @media all and (max-width: 375px) {
   .loginDiv {
-    height: 700px;
-    background-size: contain;
+    height: 723px;
+    background-size: cover;
     display: flex;
     /* align-content: center; */
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
-    margin-top: -50px;
+    /* margin-top: -50px; */
   }
 
   .LoginButtonDiv{
