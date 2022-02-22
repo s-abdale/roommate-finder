@@ -68,3 +68,9 @@
 .icons-detailedProfile:hover{
   color: #e84ca5;
 }
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}

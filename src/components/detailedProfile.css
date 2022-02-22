@@ -15,12 +15,18 @@
 .user-details {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  /* height: fit-content; */
-  /* padding-right: 10%; */
-  /* padding-left: 10%; */
   padding: 25px;
 }
+
+.user-details-name {
+  display: flex;
+  justify-content: center;
+}
+
+.user-details-email{
+  overflow-wrap: anywhere;
+}
+
 .user-pfp {
   background-color: gainsboro;
   max-width: inherit;

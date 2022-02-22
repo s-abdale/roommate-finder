@@ -67,36 +67,36 @@ export default function Profile(props) {
 
         <CardMedia src={user.user_image} className='user-pfp' component="img"/>
 
-        <article className='user-details'>
+        <table className='user-details'>
+          <tr>
+            {/* <td> </td> */}
+            <th colspan="2" className='user-details-name'>{user.first_name} {user.last_name}</th>
+          </tr>
 
-          <table className='user-details-table'>
-            <tr>
-              {/* <td> </td> */}
-              <th colspan="2">{user.first_name} {user.last_name}</th>
-            </tr>
+          <tr>
+            <td><FmdGoodOutlinedIcon className='icons-detailedProfile' color="disabled"/></td>
+            <td>{user.location}</td>
+          </tr>
 
-            <tr>
-              <td><FmdGoodOutlinedIcon className='icons-detailedProfile' color="disabled"/></td>
-              <td>{user.location}</td>
-            </tr>
+          <tr>
+            <td><PersonPinOutlinedIcon className='icons-detailedProfile' color="disabled"/></td>
+            <td>{user.bio}</td>
+          </tr>
 
-            <tr>
-              <td><PersonPinOutlinedIcon className='icons-detailedProfile' color="disabled"/></td>
-              <td>{user.bio}</td>
-            </tr>
+          <tr>
+            <td><EmailOutlinedIcon className='icons-detailedProfile' color="disabled"/></td>
+            <td className='user-details-email'>{user.email}</td>
+          </tr>
 
-            <tr>
-              <td><EmailOutlinedIcon className='icons-detailedProfile' color="disabled"/></td>
-              <td>{user.email}</td>
-            </tr>
+          <tr>
+            <td><PhoneIphoneRoundedIcon className='icons-detailedProfile' color="disabled"/></td>
+            <td>{user.phone_number}</td>
+          </tr>
+        </table>
+        {/* <article className='user-details'>
 
-            <tr>
-              <td><PhoneIphoneRoundedIcon className='icons-detailedProfile' color="disabled"/></td>
-              <td>{user.phone_number}</td>
-            </tr>
-          </table>
         
-        </article>
+        </article> */}
         
       </Card>
     
