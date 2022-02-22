@@ -54,21 +54,20 @@ export default function Profile(props) {
     <section className='main-body-Profile'>
 
 
-      <Card className='main-card'>
+      
+      {/* <Card className='main-card'>
         <CardMedia src={user.user_image} className='user_image' component="img"/>
 
         <CardContent>
           <div>Name: {user.first_name}, {user.last_name}</div>
           <div>Email: {user.email}</div>
           <div>Phone Number: {user.phone_number}</div>
-          {/* <div>{genderReg}</div> */}
           <div>Contact Info: {user.contact_info}</div>
-          {/* <div>img: {userimageReg}</div> */}
           <div>Bio: {user.bio}</div>
           <div>Location: {user.location}</div>
         </CardContent>
 
-      </Card>
+      </Card> */}
 
       <div className='profile-page-button-container'>
 
