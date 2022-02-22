@@ -12,11 +12,62 @@
     display: flex;
     height: 700px;
     background-size: contain;
-    margin-top: -50px;
+    margin-top: -410px;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     /* height: 92vh; */
-    color: cadetblue;
+    /* color: cadetblue; */
+    color: aliceblue;
+    height: 1412px;
+    background-size: cover;
+  }
+  .profile-text{
+    margin-top:390px;
+    padding-bottom: 20px;
+    color: aliceblue;
+  }
+
+  .firstName {
+
+    color:aliceblue;
+    align-items: center;
+    text-align: center;
+    
+  }
+
+  .lastName {
+    /* background: beige; */
+    align-items: center;
+  }
+
+  .emailEdit {
+    /* background: beige; */
+    align-items: center;
+  }
+
+  .phoneEdit {
+    /* background: beige; */
+    align-items: center;
+  }
+
+  .contactEdit {
+    /* background: beige; */
+    align-items: center;
+  }
+
+  .bioEdit {
+    /* background: beige; */
+    align-items: center;
+  }
+
+  .locationEdit {
+    /* background: beige; */
+    align-items: center;
+  }
+
+  .imageEdit {
+    /* background: beige; */
+    align-items: center;
   }
 }

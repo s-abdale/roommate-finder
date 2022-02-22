@@ -1,8 +1,8 @@
-.main-body-Profile{
+/* .main-body-Profile{
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+} */
 
 /* .user_image {
   height:40vh;
@@ -28,4 +28,39 @@
   height: fit-content;
   overflow-wrap: break-word;
   /* background-color: aquamarine; */
+}
+
+@media all and (max-width: 375px) {
+  .main-body-Profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 621px;
+    background-size: contain;
+  }
+
+  .biggy-buttons {
+    background-color: cornflowerblue;
+    border: none;
+    background-color: white;
+    border: 3px solid #09d3ac;
+    border-radius: 237px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    transition-duration: 0.4s;
+    /* width: 42vw; */
+    /* height: 7vw; */
+    width: 65vw;
+    height: 12vw;
+    color: darkcyan;
+  }
+  
+  
+  /* mentor call - doesn't function on hover, only on click */
+  .biggy-buttons:hover{
+    background-color: #4CAF50;
+    color: white;
+  }
 }

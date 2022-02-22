@@ -1,4 +1,52 @@
-.preferences{
-  display: flex;
-  flex-direction: column;
+@media all and (max-width: 375px) {
+  .preferences{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 45px;
+  }
+  
+  .preferencesDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 116px;
+    height: 668px;
+    background-size: cover;
+    margin-top: -48px;
+
+    justify-content: space-between;
+    padding-left: 92px;
+    padding-right: 54px;
+  }
+
+  .prefHeading{
+    color: papayawhip;
+    /* color: #df46a6; */
+    font-size: xxx-large;
+  }
+
+  .maleCheckbox {
+    background-color: antiquewhite;
+    align-self: center;
+    padding-right: 20px;
+  }
+
+  .femaleCheckbox {
+    background-color: ivory;
+    align-self: center;
+    padding-right: 20px;
+  }
+
+  .otherCheckbox {
+    background-color: antiquewhite;
+    align-self: center;
+    padding-right: 20px;
+  }
+
+  .petCheckbox {
+    background-color: ivory;
+    align-self: center;
+    padding-right: 20px;
+  }
 }

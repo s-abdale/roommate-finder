@@ -7,10 +7,6 @@ import CardMedia from '@mui/material/CardMedia';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 
-
-
-
-
 export default function Profile(props) {
   
   const [user, setUser] = useState({})
@@ -51,7 +47,7 @@ export default function Profile(props) {
 
 
   return (
-    <section className='main-body-Profile'>
+    <section className='main-body-Profile' style={{ backgroundImage: `url("https://pa1.narvii.com/7240/aa470217e4c701ea103b594ed940547a4fc6f85cr1-452-640_hq.gif")`}}>
       {/* <h3 className='page-header'>PROFILE INFORMATION</h3> */}
 
 
@@ -72,16 +68,20 @@ export default function Profile(props) {
       </Card>
 
 
-      <Button variant="contained"
+      <Link to="/editProfile"><button variant="contained" className='biggy-buttons'>Edit Profile</button></Link>
+      {/* <Link to="/editProfile"><Button variant="contained" className='biggy-buttons'>Edit Profile</Button></Link> */}
+      {/* <Button variant="contained"
         className='big-buttons'
       >
         <Link to="/editProfile">Edit Profile</Link>
-      </Button>
+      </Button> */}
 
-      <Button variant="contained" className='big-buttons'
+      <Link to="/preferences"><button variant="contained" className='biggy-buttons'>Edit Preferences</button></Link>
+      {/* <Link to="/preferences"><Button variant="contained" className='biggy-buttons'>Edit Preferences</Button></Link> */}
+      {/* <Button variant="contained" className='big-buttons'
       >
         <Link to="/preferences">Edit Preferences</Link>
-      </Button>
+      </Button> */}
 
     </section>
   );

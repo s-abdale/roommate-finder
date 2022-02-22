@@ -79,11 +79,20 @@
 } */
 
 @media all and (max-width: 375px) {
-  .loginDiv {
+  /* .loginDiv {
     height: 700px;
     background-size: contain;
     display: flex;
-    /* align-content: center; */
+    flex-direction: column;
+    align-items: center;
+    margin-top: -50px;
+  } */
+
+  .loginDiv{
+    height: 674px;
+    background-size: cover;
+    display: flex;
+    align-content: center;
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
@@ -114,6 +123,12 @@
     font-size: larger;
   }
 
+  .LoginBlock {
+    background: gold;
+    width: 200px;
+    height: 30px;
+    font-size: larger;
+  }
   /* .form-group-password {
     padding-bottom: 10px;
     width: 220px;

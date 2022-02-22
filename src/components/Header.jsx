@@ -5,6 +5,8 @@ import axios from 'axios'
 import { Button } from './Button';
 import './header.css';
 
+//import Button from '@mui/material/Button';
+//variant="contained"
 const onLogout = () => {
   //window.location.href = "/logout"
 }
@@ -34,8 +36,8 @@ export const Header = ({user, onLogout}) => (
         ) : (
           <>
             {/* <Button size="small"  label="Log in" /> */}
-            <Link to="/login"><button>Log In</button></Link>
-            <Link to="/register"><button>Sign up</button></Link>
+            <Link to="/login"><button className='loginButton'>Log In</button></Link>
+            <Link to="/register"><button className='signUpButton'>Sign up</button></Link>
             {/* <Button primary size="small" onClick={onCreateAccount} label="Sign up" /> */}
           </>
         )}

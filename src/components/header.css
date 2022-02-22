@@ -28,3 +28,11 @@ h1 {
 button + button {
   margin-left: 10px;
 }
+
+.loginButton {
+  background-color: gold;
+}
+
+.signUpButton {
+  background-color: aquamarine;
+}
