@@ -72,7 +72,7 @@ export default function Profile(props) {
           <table className='user-details-table'>
             <tr>
               {/* <td> </td> */}
-              <th colspan="2" className='user-details-table-fullName'>{user.first_name} {user.last_name}</th>
+              <th colspan="2">{user.first_name} {user.last_name}</th>
             </tr>
 
             <tr>
