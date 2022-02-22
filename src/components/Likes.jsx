@@ -99,6 +99,7 @@ export default function Likes() {
             <SimpleProfile
               bio = {singleLikee.bio}
               user_name = {singleLikee.user_name}
+              // image = {singleLikee.image}
             />
           </div>
         </TinderCard>

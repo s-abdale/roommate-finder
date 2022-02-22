@@ -29,55 +29,58 @@ export default function DetailedProfile() {
 
 
   return (
-    <Card className='detailed-profile'>
+    <div className='detailed-profile-page'>
+
+      <Card className='detailed-profile'>
 
 
 
-      <CardMedia src={user.user_image} className='user-pfp' component="img"/>
+        <CardMedia src={user.user_image} className='user-pfp' component="img"/>
 
 
-      {/* add icons to user details */}
+        {/* add icons to user details */}
 
-      <article className='user-details'>
-        {/* <p>{user.first_name} {user.last_name}</p>
+        <article className='user-details'>
+          {/* <p>{user.first_name} {user.last_name}</p>
 
-        <p><FmdGoodOutlinedIcon/> {user.location}</p>
-        <p><PersonPinOutlinedIcon/> {user.bio}</p>
+          <p><FmdGoodOutlinedIcon/> {user.location}</p>
+          <p><PersonPinOutlinedIcon/> {user.bio}</p>
 
-        <br/>
-        
-        <p><EmailOutlinedIcon/> {user.email}</p>
-        <p><PhoneIphoneRoundedIcon/> {user.phone_number}</p> */}
+          <br/>
+          
+          <p><EmailOutlinedIcon/> {user.email}</p>
+          <p><PhoneIphoneRoundedIcon/> {user.phone_number}</p> */}
 
 
-        <table className='user-details-table'>
-          <tr>
-            <td> </td>
-            <td>{user.first_name} {user.last_name}</td>
-          </tr>
+          <table className='user-details-table'>
+            <tr>
+              {/* <td> </td> */}
+              <th colspan="2" className='user-details-table-fullName'>{user.first_name} {user.last_name}</th>
+            </tr>
 
-          <tr>
-            <td><FmdGoodOutlinedIcon className='icons-detailedProfile' color="disabled"/></td>
-            <td>{user.location}</td>
-          </tr>
+            <tr>
+              <td><FmdGoodOutlinedIcon className='icons-detailedProfile' color="disabled"/></td>
+              <td>{user.location}</td>
+            </tr>
 
-          <tr>
-            <td><PersonPinOutlinedIcon className='icons-detailedProfile' color="disabled"/></td>
-            <td>{user.bio}</td>
-          </tr>
+            <tr>
+              <td><PersonPinOutlinedIcon className='icons-detailedProfile' color="disabled"/></td>
+              <td>{user.bio}</td>
+            </tr>
 
-          <tr>
-            <td><EmailOutlinedIcon className='icons-detailedProfile' color="disabled"/></td>
-            <td>{user.email}</td>
-          </tr>
+            <tr>
+              <td><EmailOutlinedIcon className='icons-detailedProfile' color="disabled"/></td>
+              <td>{user.email}</td>
+            </tr>
 
-          <tr>
-            <td><PhoneIphoneRoundedIcon className='icons-detailedProfile' color="disabled"/></td>
-            <td>{user.phone_number}</td>
-          </tr>
-        </table>
+            <tr>
+              <td><PhoneIphoneRoundedIcon className='icons-detailedProfile' color="disabled"/></td>
+              <td>{user.phone_number}</td>
+            </tr>
+          </table>
 
-      </article>
-    </Card>
+        </article>
+      </Card>
+    </div>
   );
 };

@@ -21,6 +21,7 @@ export default function SimpleProfile(props) {
 
           <p>{props.user_name}</p>
           <p>{props.bio}</p>
+          {/* <p>{props.image}</p> */}
           
         </article>
       </Card>

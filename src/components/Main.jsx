@@ -12,15 +12,15 @@ export default function Main(props) {
     <section className='main-body' style={{ backgroundImage: `url("https://wallpaperaccess.com/full/1098481.jpg")`}}>
 
     <Link to="/profile">
-      <button className='big-buttons'>Profile</button>
+      <button className='button-17'>Profile</button>
     </Link>
 
     <Link to="/likes">
-      <button className='big-buttons'> Find Roomies </button>
+      <button className='button-17'> Find Roomies </button>
     </Link>
 
     <Link to="/matchList">
-      <button className='big-buttons'> Matches </button>
+      <button className='button-17'> Matches </button>
     </Link>
 
     </section>
