@@ -153,7 +153,7 @@ export default function Preferences() {
           <option value="false"/> 
       </datalist> */}
       <Link to="/profile">
-        <button type='submit' onClick={savePref}> Save Preferences </button>
+        <button type='submit' onClick={savePref} className='edit-preferences-update-button'> Update </button>
       </Link>
       
     </form>

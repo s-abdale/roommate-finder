@@ -235,7 +235,7 @@ export default function EditProfile(props){
 
 
         <Link to="/profile">
-          <button type='submit' onClick={edit}> Update </button>
+          <button type='submit' onClick={edit} className='edit-profile-update-button'> Update </button>
         </Link>
 
       </form>   
