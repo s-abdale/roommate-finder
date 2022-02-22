@@ -20,33 +20,32 @@
     padding-right: 54px;
   }
 
-  .prefHeading{
+  /* .prefHeading{
     color: papayawhip;
-    /* color: #df46a6; */
     font-size: xxx-large;
-  }
+  } */
 
-  .maleCheckbox {
+  /* .maleCheckbox {
     background-color: antiquewhite;
     align-self: center;
     padding-right: 20px;
-  }
+  } */
 
-  .femaleCheckbox {
+  /* .femaleCheckbox {
     background-color: ivory;
     align-self: center;
     padding-right: 20px;
-  }
+  } */
 
-  .otherCheckbox {
+  /* .otherCheckbox {
     background-color: antiquewhite;
     align-self: center;
     padding-right: 20px;
-  }
+  } */
 
-  .petCheckbox {
+  /* .petCheckbox {
     background-color: ivory;
     align-self: center;
     padding-right: 20px;
-  }
+  } */
 }

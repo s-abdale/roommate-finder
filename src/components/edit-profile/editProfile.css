@@ -28,46 +28,37 @@
     color: aliceblue;
   }
 
-  .firstName {
-
+  /* .firstName {
     color:aliceblue;
     align-items: center;
-    text-align: center;
-    
-  }
+    text-align: center; 
+  } */
 
-  .lastName {
-    /* background: beige; */
+  /* .lastName {
     align-items: center;
-  }
+  } */
 
-  .emailEdit {
-    /* background: beige; */
+  /* .emailEdit {
     align-items: center;
-  }
+  } */
 
-  .phoneEdit {
-    /* background: beige; */
+  /* .phoneEdit {
     align-items: center;
-  }
+  } */
 
-  .contactEdit {
-    /* background: beige; */
+  /* .contactEdit {
     align-items: center;
-  }
+  } */
 
-  .bioEdit {
-    /* background: beige; */
+  /* .bioEdit {
     align-items: center;
-  }
+  } */
 
-  .locationEdit {
-    /* background: beige; */
+  /* .locationEdit {
     align-items: center;
-  }
+  } */
 
-  .imageEdit {
-    /* background: beige; */
+  /* .imageEdit {
     align-items: center;
-  }
+  } */
 }

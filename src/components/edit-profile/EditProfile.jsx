@@ -117,8 +117,10 @@ export default function EditProfile(props){
 //https://www.fonewalls.com/wp-content/uploads/2020/09/Vector-Train-Wallpaper-058.jpg
 //https://d1nxzqpcg2bym0.cloudfront.net/google_play/com.PixelArtCityWallpaper.supapowa/ef67cc1a-29e0-11e8-b73c-2b5845c03c7b/640
 //https://wallpapers.com/images/high/pixel-city-in-pink-aesthetic-rh4lxylscgkqas3c.jpg
-  return (
-    <section className='main-body-EditProfile' style={{ backgroundImage: `url("https://pa1.narvii.com/7609/9cc5a08bae8a916f6e5791a1b1fe70cd3c1c5c0er1-288-480_hq.gif")`}}>
+//style={{ backgroundImage: `url("https://pa1.narvii.com/7609/9cc5a08bae8a916f6e5791a1b1fe70cd3c1c5c0er1-288-480_hq.gif")`}}
+  
+return (
+    <section className='main-body-EditProfile'>
 
       <form onSubmit={event => event.preventDefault()} autoComplete="off" className='profile-text'>
 

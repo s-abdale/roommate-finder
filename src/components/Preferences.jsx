@@ -54,10 +54,11 @@ export default function Preferences() {
       //redirect to new page.
     })
   }
-
+  //style={{ backgroundImage: `url("https://64.media.tumblr.com/b94abb1a1268936be44dab027a3e9db6/tumblr_oer793zz1Z1ufvrkqo1_540.gifv")`}}
+//<h1 className="prefHeading">Select preferences</h1
   return (
 
-    <div className="preferencesDiv" style={{ backgroundImage: `url("https://64.media.tumblr.com/b94abb1a1268936be44dab027a3e9db6/tumblr_oer793zz1Z1ufvrkqo1_540.gifv")`}}>
+    <div className="preferencesDiv" >
     <form onSubmit={event => event.preventDefault()} autoComplete="off" className='preferences'>
       {/* <h1>Preferences</h1> */}
 
@@ -65,7 +66,7 @@ export default function Preferences() {
         component="fieldset" 
         variant="standard"
       >
-        <FormLabel component="legend"><h1 className="prefHeading">Select preferences</h1></FormLabel>
+        <FormLabel component="legend">Select preferences</FormLabel>
 
         <FormGroup>
           
