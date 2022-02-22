@@ -1,8 +1,9 @@
-.main-body-profile{
+
+/* .main-body-Profile{
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+} */
 
 
 
@@ -74,3 +75,34 @@
   flex-direction: column;
   padding: 25px;
 }
+
+/* @media all and (max-width: 375px) {
+  .main-body-Profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 621px;
+    background-size: contain;
+  }
+
+  .biggy-buttons {
+    background-color: cornflowerblue;
+    border: none;
+    background-color: white;
+    border: 3px solid #09d3ac;
+    border-radius: 237px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    transition-duration: 0.4s;
+    width: 65vw;
+    height: 12vw;
+    color: darkcyan;
+  }
+  
+  .biggy-buttons:hover{
+    background-color: #4CAF50;
+    color: white;
+  }
+} */

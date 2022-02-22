@@ -18,7 +18,110 @@
     padding-top: 51px;
   }
 
+  input[name="firstnameReg"] {
+    background: aqua;
+    width: 200px;
+    height: 20px;
+    border-color: aliceblue;
+    text-align: center;
+    font-size: larger;
+  }
+
+  input[name="lastnameReg"] {
+    background: aqua;
+    width: 200px;
+    height: 20px;
+    border-color: aliceblue;
+    text-align: center;
+    font-size: larger;
+  }
+
+  input[name="usernameReg"] {
+    background: aqua;
+    width: 200px;
+    height: 20px;
+    border-color: aliceblue;
+    text-align: center;
+    font-size: larger;
+  }
+
   input[name="emailReg"] {
     background: aqua;
+    width: 200px;
+    height: 20px;
+    border-color: aliceblue;
+    text-align: center;
+    font-size: larger;
+  }
+  
+  input[name="passwordReg"] {
+    background: aqua;
+    width: 200px;
+    height: 20px;
+    border-color: aliceblue;
+    text-align: center;
+    font-size: larger;
+  }
+
+  input[name="phonenumberReg"] {
+    background: aqua;
+    width: 200px;
+    height: 20px;
+    border-color: aliceblue;
+    text-align: center;
+    font-size: larger;
+  }
+
+  input[name="genderReg"] {
+    background: aqua;
+    width: 200px;
+    height: 20px;
+    border-color: aliceblue;
+    text-align: center;
+    font-size: larger;
+  }
+  
+  input[name="contactinfoReg"] {
+    background: aqua;
+    width: 200px;
+    height: 20px;
+    border-color: aliceblue;
+    text-align: center;
+    font-size: larger;
+  }
+
+  input[name="userimageReg"] {
+    background: aqua;
+    width: 200px;
+    height: 20px;
+    border-color: aliceblue;
+    text-align: center;
+    font-size: larger;
+  }
+
+  input[name="bioReg"] {
+    background: aqua;
+    width: 200px;
+    height: 20px;
+    border-color: aliceblue;
+    text-align: center;
+    font-size: larger;
+  }
+
+  input[name="locationReg"] {
+    background: aqua;
+    width: 200px;
+    height: 20px;
+    border-color: aliceblue;
+    text-align: center;
+    font-size: larger;
+  }
+  
+  .registerButton {
+    background-color: aquamarine;
+    width: 200px;
+    height: 38px;
+    margin-top: 10px;
+    font-size: larger;
   }
 }

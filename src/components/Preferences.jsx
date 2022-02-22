@@ -54,9 +54,11 @@ export default function Preferences() {
       //redirect to new page.
     })
   }
-
+  //style={{ backgroundImage: `url("https://64.media.tumblr.com/b94abb1a1268936be44dab027a3e9db6/tumblr_oer793zz1Z1ufvrkqo1_540.gifv")`}}
+//<h1 className="prefHeading">Select preferences</h1
   return (
 
+    <div className="preferencesDiv" >
     <form onSubmit={event => event.preventDefault()} autoComplete="off" className='preferences'>
       {/* <h1>Preferences</h1> */}
 
@@ -69,6 +71,7 @@ export default function Preferences() {
         <FormGroup>
           
           <FormControlLabel
+            className="maleCheckbox"
             control={
               <Checkbox 
                 checked={male} 
@@ -80,6 +83,7 @@ export default function Preferences() {
           />
 
           <FormControlLabel
+            className="femaleCheckbox"
             control={
               <Checkbox 
                 checked={female} 
@@ -91,6 +95,7 @@ export default function Preferences() {
           />
 
           <FormControlLabel
+            className="otherCheckbox"
             control={
               <Checkbox 
                 checked={other} 
@@ -102,12 +107,12 @@ export default function Preferences() {
           />
 
           <FormControlLabel
+            className="petCheckbox"
             control={
               <Checkbox 
                 // checked={petFriendly} 
                 onChange={(e) => {setPetFriendly(e.target.checked)}}
                 // onChange={(e) => {console.log(e.target.checked)}}
-
                 name="PetFriendly" 
               />
             }
@@ -118,8 +123,6 @@ export default function Preferences() {
       
       <br/>
       <br/>
-
-
 
       {/* <label>Male:
         <input type="text"  value={male} list="browseMale"  name="Pref" onChange={(e) => {setMale(e.target.value)}}/>    
@@ -157,6 +160,7 @@ export default function Preferences() {
       </Link>
       
     </form>
+    </div>
   )
 };
 
