@@ -141,11 +141,13 @@ export default function Likes() {
         </div>
 
         <div className='command-extras'>
-          <p>You swiped right!</p>
+          {/* <p>You swiped right!</p> */}
 
-          <Button variant="outlined">
-            <Link to="/matchList" className='go-to-matches'>Go to Matches</Link>
-          </Button>
+          <Link to="/matchList" className='go-to-matches-link'>
+            <Button variant="contained" className='button-swipe-right' color="secondary">
+              Go to Matches
+            </Button>
+          </Link>
 
         </div>
       </div>

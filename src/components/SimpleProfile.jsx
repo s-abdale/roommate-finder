@@ -13,7 +13,7 @@ export default function SimpleProfile(props) {
 
 
   return (
-    <div className='card-wrapper'>
+    <div className='card-wrapper-simple-profile'>
 
       <Card className='simple-profile'>
 

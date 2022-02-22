@@ -51,3 +51,9 @@
 /* .MuiIcon-colorPrimary {
   background-color: #E84CA5
 } */
+
+
+.go-to-matches-link {
+  text-decoration: none;
+  margin-top: 1rem;
+}

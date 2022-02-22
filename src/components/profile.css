@@ -1,22 +1,28 @@
-.main-body-Profile{
+.main-body-profile{
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* .user_image {
-  height:40vh;
-} */
 
-.main-card {
+
+.main-card-profile {
   margin-top: 70px;
   margin-bottom: 10px;
   overflow: scroll;
 }
 
+.user-pfp {
+  background-color: gainsboro;
+  max-width: inherit;
+  /* max-height: 45vh; */
+  /* margin-bottom: 5vh; */
+}
+
 .MuiCardMedia-root{
-  /* object-position: 50% 0%; */
-  height: 250px;
+  max-height: 17rem;
+  max-width: 17rem;
+  margin: auto;
 }
 
 .MuiCard-root	{
@@ -34,6 +40,9 @@
   justify-content: space-between;
   text-decoration: none;
   margin-top: 10px;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 1rem
 }
 
 .profile-page-buttons {
@@ -54,4 +63,14 @@
   padding: 24px;
   width: auto;
   border-radius: 4px;
+}
+
+.icons-detailedProfile:hover{
+  color: #e84ca5;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
 }

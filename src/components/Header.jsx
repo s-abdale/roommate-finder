@@ -29,7 +29,12 @@ export const Header = ({user, onLogout}) => (
       <div>
         {user ? (
           <>
-            <Link to="/"><button className='header-buttons' onClick={onLogout}><LogoutIcon fontSize='small'/></button></Link>
+            <Link to="/">
+              <button className='header-buttons' onClick={onLogout}>
+                <LogoutIcon fontSize='small'/>
+                <p className='logout-button-text'>Log out</p>
+              </button>
+            </Link>
             {/* <Link to="/"><button>Home</button></Link> */}
             </>
         ) : (
