@@ -69,7 +69,7 @@ export default function Resgister({setresUser, setUserID}) {
   //https://i.pinimg.com/originals/74/cd/f8/74cdf85c9f3ee94b77b4da0b81d9f17f.jpg
   //https://wallpaperaccess.com/full/1098481.jpg
   return (
-    <div className="registerDiv" style={{ backgroundImage: `url("https://wallpaperaccess.com/full/1098481.jpg")`}}>
+    <div className="registerDiv" >
       <form onSubmit={event => event.preventDefault()} autoComplete="off" className='register'>
         {/* <h1>Registration</h1> */}
 
@@ -82,22 +82,80 @@ export default function Resgister({setresUser, setUserID}) {
           name="firstnameReg"
           onChange={(e) => {setFirstnameReg(e.target.value)}}
         />
-        <br/>
+        {/* <br/> */}
 
         {/* <label>First Name</label>
          <input type='text' placeholder='First Name' name="firstnameReg" onChange={(e) => {setFirstnameReg(e.target.value)}}></input> */}
 
+        <TextField
+          id="outlined-basic"
+          label="Last Name"
+          variant="outlined"
+          margin="normal"
+          type='text'
+          name="lastnameReg"
+          onChange={(e) => {setLastnameReg(e.target.value)}}
+        />
+        {/* <br/> */}
 
-        <label>Last Name</label>
-          <input type='text' placeholder='Last Name' name="lastnameReg"onChange={(e) => {setLastnameReg(e.target.value)}} ></input>
-        <label>User Name</label>
-          <input type='text' placeholder='Username' name="usernameReg" onChange={(e) => {setUsernameReg(e.target.value)}} ></input>
-        <label>Email</label>
-          <input type='email' placeholder='Email' name="emailReg" onChange={(e) => {setEmailReg(e.target.value)}}></input>
-        <label>Password</label>
-         <input type='password' placeholder='Password...' name="passwordReg" onChange={(e) => {setPasswordReg(e.target.value)}} ></input>
-        <label>Phone Number</label>
-          <input type='text' placeholder='Phone Number' name="phonenumberReg" onChange={(e) => {setPhonenumberReg(e.target.value)}} ></input>
+        {/* <label>Last Name</label>
+          <input type='text' placeholder='Last Name' name="lastnameReg"onChange={(e) => {setLastnameReg(e.target.value)}} ></input> */}
+        
+        <TextField
+          id="outlined-basic"
+          label= "User Name"
+          variant="outlined"
+          margin="normal"
+          type='text'
+          name="usernameReg"
+          onChange={(e) => {setUsernameReg(e.target.value)}}
+        />
+        {/* <br/> */}
+
+        {/* <label>User Name</label>
+          <input type='text' placeholder='Username' name="usernameReg" onChange={(e) => {setUsernameReg(e.target.value)}} ></input> */}
+        
+        <TextField
+          id="outlined-basic"
+          label= "Email"
+          variant="outlined"
+          margin="normal"
+          type='email'
+          name="emailReg"
+          onChange={(e) => {setEmailReg(e.target.value)}}
+        />
+        {/* <br/> */}
+        
+        {/* <label>Email</label>
+          <input type='email' placeholder='Email' name="emailReg" onChange={(e) => {setEmailReg(e.target.value)}}></input> */}
+        
+        <TextField
+          id="outlined-basic"
+          label= "Password"
+          variant="outlined"
+          margin="normal"
+          type='password'
+          name="passwordReg"
+          onChange={(e) => {setPasswordReg(e.target.value)}}
+        />
+        {/* <br/> */}
+
+        {/* <label>Password</label>
+         <input type='password' placeholder='Password...' name="passwordReg" onChange={(e) => {setPasswordReg(e.target.value)}} ></input> */}
+        
+        <TextField
+          id="outlined-basic"
+          label= "Phone Number"
+          variant="outlined"
+          margin="normal"
+          type='text'
+          name="phonenumberReg"
+          onChange={(e) => {setPhonenumberReg(e.target.value)}}
+        />
+        {/* <br/> */}
+
+        {/* <label>Phone Number</label>
+          <input type='text' placeholder='Phone Number' name="phonenumberReg" onChange={(e) => {setPhonenumberReg(e.target.value)}} ></input> */}
         
         <label>Gender:</label>
           <select  placeholder="Gender" list="browsers" name="genderReg" onChange={(e) => {setGenderReg(e.target.value)}}>
@@ -108,14 +166,63 @@ export default function Resgister({setresUser, setUserID}) {
 
         {/* <label>Gender</label>
         <input type='text' placeholder='Select Gender' onChange={(e) => {setGenderReg(e.target.value)}} ></input> */}
-        <label>Contact Info</label>
-         <input type='text' placeholder='Contact Info' name="contactinfoReg" onChange={(e) => {setContactinfoReg(e.target.value)}}></input>
-        <label>Upload image</label>
-          <input type='text' placeholder='Upload Image' name="userimageReg" onChange={(e) => {setUserimageReg(e.target.value)}}></input>
-        <label>Bio</label>
-          <input type='text' placeholder='Bio'  name="bioReg" onChange={(e) => {setBioReg(e.target.value)}}></input>
-        <label>Location</label>
-          <input type='text' placeholder='Location' name="locationReg" onChange={(e) => {setLocationReg(e.target.value)}}></input>
+
+        <TextField
+          id="outlined-basic"
+          label= "Contact Info"
+          variant="outlined"
+          margin="normal"
+          type='text'
+          name="contactinfoReg"
+          onChange={(e) => {setContactinfoReg(e.target.value)}}
+        />
+        {/* <br/> */}
+
+        {/* <label>Contact Info</label>
+         <input type='text' placeholder='Contact Info' name="contactinfoReg" onChange={(e) => {setContactinfoReg(e.target.value)}}></input> */}
+
+         <TextField
+          id="outlined-basic"
+          label= "Upload image"
+          variant="outlined"
+          margin="normal"
+          type='text'
+          name="userimageReg"
+          onChange={(e) => {setUserimageReg(e.target.value)}}
+        />
+        {/* <br/> */}
+
+        {/* <label>Upload image</label>
+          <input type='text' placeholder='Upload Image' name="userimageReg" onChange={(e) => {setUserimageReg(e.target.value)}}></input> */}
+        
+        <TextField
+          id="outlined-basic"
+          label= "Bio"
+          variant="outlined"
+          margin="normal"
+          type='text'
+          name="bioReg"
+          onChange={(e) => {setBioReg(e.target.value)}}
+        />
+        {/* <br/> */}
+
+        {/* <label>Bio</label>
+          <input type='text' placeholder='Bio'  name="bioReg" onChange={(e) => {setBioReg(e.target.value)}}></input> */}
+
+          <TextField
+          id="outlined-basic"
+          label= "Location"
+          variant="outlined"
+          margin="normal"
+          type='text'
+          name="locationReg"
+          onChange={(e) => {setLocationReg(e.target.value)}}
+        />
+        {/* <br/> */}
+        
+        {/* <label>Location</label>
+          <input type='text' placeholder='Location' name="locationReg" onChange={(e) => {setLocationReg(e.target.value)}}></input> */}
+        
         <button type='submit' onClick={register}> Register
           {/* <Link to="/">Register</Link> */}
         </button>
