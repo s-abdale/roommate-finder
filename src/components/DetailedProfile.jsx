@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './detailedProfile.css';
-import {useParams, useNavigate} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import CardMedia from '@mui/material/CardMedia';
 import Card from '@mui/material/Card';
+import {BrowserRouter as Router, Link , Route, Routes, useNavigate} from 'react-router-dom';
 
 // icons
 import FmdGoodOutlinedIcon from '@mui/icons-material/FmdGoodOutlined';
@@ -78,9 +79,13 @@ export default function DetailedProfile() {
               <td>{user.phone_number}</td>
             </tr>
           </table>
-
         </article>
       </Card>
+          
+      <Link to="/matchList">
+        <button className='BackToMatchList'> Matches </button>
+      </Link>
+
     </div>
   );
 };
