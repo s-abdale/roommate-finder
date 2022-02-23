@@ -3,6 +3,18 @@ import {BrowserRouter as Router, Link , Route, Routes, useNavigate} from 'react-
 import axios from "axios";
 import './register.css';
 
+
+import TextField from '@mui/material/TextField';
+import FormControl from '@mui/material/FormControl';
+
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import Select from '@mui/material/Select';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormLabel from '@mui/material/FormLabel';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Radio from '@mui/material/Radio';
+
 export default function Resgister({setresUser, setUserID}) {
 
   const navigate = useNavigate()
@@ -60,8 +72,22 @@ export default function Resgister({setresUser, setUserID}) {
     <div className="registerDiv" style={{ backgroundImage: `url("https://wallpaperaccess.com/full/1098481.jpg")`}}>
       <form onSubmit={event => event.preventDefault()} autoComplete="off" className='register'>
         {/* <h1>Registration</h1> */}
-        <label>First Name</label>
-         <input type='text' placeholder='First Name' name="firstnameReg" onChange={(e) => {setFirstnameReg(e.target.value)}}></input>
+
+        <TextField
+          id="outlined-basic"
+          label="First Name"
+          variant="outlined"
+          margin="normal"
+          type='text'
+          name="firstnameReg"
+          onChange={(e) => {setFirstnameReg(e.target.value)}}
+        />
+        <br/>
+
+        {/* <label>First Name</label>
+         <input type='text' placeholder='First Name' name="firstnameReg" onChange={(e) => {setFirstnameReg(e.target.value)}}></input> */}
+
+
         <label>Last Name</label>
           <input type='text' placeholder='Last Name' name="lastnameReg"onChange={(e) => {setLastnameReg(e.target.value)}} ></input>
         <label>User Name</label>
