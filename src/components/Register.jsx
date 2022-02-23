@@ -69,7 +69,7 @@ export default function Resgister({setresUser, setUserID}) {
   //https://i.pinimg.com/originals/74/cd/f8/74cdf85c9f3ee94b77b4da0b81d9f17f.jpg
   //https://wallpaperaccess.com/full/1098481.jpg
   return (
-    <div className="registerDiv" >
+    <div className="registerDiv" style={{ backgroundImage: `url("https://wallpaperaccess.com/full/833312.png")`}} >
       <form onSubmit={event => event.preventDefault()} autoComplete="off" className='register'>
         {/* <h1>Registration</h1> */}
 
@@ -80,6 +80,7 @@ export default function Resgister({setresUser, setUserID}) {
           margin="normal"
           type='text'
           name="firstnameReg"
+          className='login-text-field'
           onChange={(e) => {setFirstnameReg(e.target.value)}}
         />
         {/* <br/> */}
@@ -94,6 +95,7 @@ export default function Resgister({setresUser, setUserID}) {
           margin="normal"
           type='text'
           name="lastnameReg"
+          className='login-text-field'
           onChange={(e) => {setLastnameReg(e.target.value)}}
         />
         {/* <br/> */}
@@ -108,6 +110,7 @@ export default function Resgister({setresUser, setUserID}) {
           margin="normal"
           type='text'
           name="usernameReg"
+          className='login-text-field'
           onChange={(e) => {setUsernameReg(e.target.value)}}
         />
         {/* <br/> */}
@@ -122,6 +125,7 @@ export default function Resgister({setresUser, setUserID}) {
           margin="normal"
           type='email'
           name="emailReg"
+          className='login-text-field'
           onChange={(e) => {setEmailReg(e.target.value)}}
         />
         {/* <br/> */}
@@ -136,6 +140,7 @@ export default function Resgister({setresUser, setUserID}) {
           margin="normal"
           type='password'
           name="passwordReg"
+          className='login-text-field'
           onChange={(e) => {setPasswordReg(e.target.value)}}
         />
         {/* <br/> */}
@@ -150,6 +155,7 @@ export default function Resgister({setresUser, setUserID}) {
           margin="normal"
           type='text'
           name="phonenumberReg"
+          className='login-text-field'
           onChange={(e) => {setPhonenumberReg(e.target.value)}}
         />
         {/* <br/> */}
@@ -157,7 +163,8 @@ export default function Resgister({setresUser, setUserID}) {
         {/* <label>Phone Number</label>
           <input type='text' placeholder='Phone Number' name="phonenumberReg" onChange={(e) => {setPhonenumberReg(e.target.value)}} ></input> */}
         
-        <label>Gender:</label>
+        {/* <br/> */}
+        {/* <label>Gender:</label> */}
           <select  placeholder="Gender" list="browsers" name="genderReg" onChange={(e) => {setGenderReg(e.target.value)}}>
               <option value="Male">Male</option> 
               <option value="Female">Female</option>
@@ -174,6 +181,7 @@ export default function Resgister({setresUser, setUserID}) {
           margin="normal"
           type='text'
           name="contactinfoReg"
+          className='login-text-field'
           onChange={(e) => {setContactinfoReg(e.target.value)}}
         />
         {/* <br/> */}
@@ -188,6 +196,7 @@ export default function Resgister({setresUser, setUserID}) {
           margin="normal"
           type='text'
           name="userimageReg"
+          className='login-text-field'
           onChange={(e) => {setUserimageReg(e.target.value)}}
         />
         {/* <br/> */}
@@ -202,6 +211,7 @@ export default function Resgister({setresUser, setUserID}) {
           margin="normal"
           type='text'
           name="bioReg"
+          className='login-text-field'
           onChange={(e) => {setBioReg(e.target.value)}}
         />
         {/* <br/> */}
@@ -216,16 +226,18 @@ export default function Resgister({setresUser, setUserID}) {
           margin="normal"
           type='text'
           name="locationReg"
+          className='login-text-field'
           onChange={(e) => {setLocationReg(e.target.value)}}
         />
         {/* <br/> */}
         
         {/* <label>Location</label>
           <input type='text' placeholder='Location' name="locationReg" onChange={(e) => {setLocationReg(e.target.value)}}></input> */}
-        
-        <button type='submit' onClick={register}> Register
+        <br/>
+        <button className="register-page-submit-button" type='submit' onClick={register}> Register
           {/* <Link to="/">Register</Link> */}
         </button>
+        <br/>
     </form>
   </div>
     
