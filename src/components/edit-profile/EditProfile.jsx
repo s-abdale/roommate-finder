@@ -4,7 +4,6 @@ import {BrowserRouter as Router, Link , Route, Routes, useNavigate} from 'react-
 import '../profile.css';
 import './editProfile.css'
 
-
 import TextField from '@mui/material/TextField';
 import FormControl from '@mui/material/FormControl';
 
@@ -16,6 +15,8 @@ import FormLabel from '@mui/material/FormLabel';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Radio from '@mui/material/Radio';
 
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
 
 // import {useNavigate} from 'react-router-dom';
 
@@ -47,6 +48,7 @@ export default function EditProfile(props){
   const [bioEdit, setBioEdit] = useState('');
   const [locationEdit, setLocationEdit] = useState('');
 
+  //const [phonevalue, setPhoneValue] = useState()
 
   const edit = () => {
     // process gender
@@ -135,7 +137,8 @@ export default function EditProfile(props){
           margin="normal"
           type='text'  
           value={lastnameEdit} 
-          name="lastnameEdit"onChange={(e) => {setLastnameEdit(e.target.value)}} 
+          name="lastnameEdit"
+          onChange={(e) => {setLastnameEdit(e.target.value)}} 
         />
         {/* <br/> */}
 
@@ -164,6 +167,14 @@ export default function EditProfile(props){
           onChange={(e) => {setPhonenumberEdit(e.target.value)}} 
         />
         {/* <br/> */}
+        {/* <PhoneInput
+          defaultCountry="CA"
+          value={phonenumberEdit}
+          name="phonenumberEdit"
+          // className='login-text-field'
+          onChange={(e) => {setPhonenumberEdit(e.target.value)}}
+        />
+        <br/> */}
 
 
         <FormControl fullWidth>

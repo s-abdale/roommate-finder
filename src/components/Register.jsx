@@ -3,8 +3,11 @@ import {BrowserRouter as Router, Link , Route, Routes, useNavigate} from 'react-
 import axios from "axios";
 import './register.css';
 
-
 import TextField from '@mui/material/TextField';
+
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
+
 import FormControl from '@mui/material/FormControl';
 
 import InputLabel from '@mui/material/InputLabel';
@@ -30,6 +33,8 @@ export default function Resgister({setresUser, setUserID}) {
     const [userimageReg, setUserimageReg] = useState('');
     const [bioReg, setBioReg] = useState('');
     const [locationReg, setLocationReg] = useState('');
+
+    //const [phonevalue, setPhoneValue] = useState()
   
     const register = () => {
       console.log("testing: ", genderReg)
@@ -68,8 +73,10 @@ export default function Resgister({setresUser, setUserID}) {
   // https://wallpaperaccess.com/full/833312.png
   //https://i.pinimg.com/originals/74/cd/f8/74cdf85c9f3ee94b77b4da0b81d9f17f.jpg
   //https://wallpaperaccess.com/full/1098481.jpg
+
+  //<link rel="stylesheet" href="/css/react-phone-number-input/style.css"></link>
   return (
-    <div className="registerDiv" style={{ backgroundImage: `url("https://wallpaperaccess.com/full/833312.png")`}} >
+    <div className="registerDiv"  style={{ backgroundImage: `url("https://wallpaperaccess.com/full/833312.png")`}} >
       <form onSubmit={event => event.preventDefault()} autoComplete="off" className='register'>
         {/* <h1>Registration</h1> */}
 
@@ -148,7 +155,7 @@ export default function Resgister({setresUser, setUserID}) {
         {/* <label>Password</label>
          <input type='password' placeholder='Password...' name="passwordReg" onChange={(e) => {setPasswordReg(e.target.value)}} ></input> */}
         
-        <TextField
+        {/* <TextField
           id="outlined-basic"
           label= "Phone Number"
           variant="outlined"
@@ -157,8 +164,16 @@ export default function Resgister({setresUser, setUserID}) {
           name="phonenumberReg"
           className='login-text-field'
           onChange={(e) => {setPhonenumberReg(e.target.value)}}
+        /> */}
+        <br/>
+        <PhoneInput
+          defaultCountry="CA"
+          placeholder="Enter phone number"
+          value={phonenumberReg}
+          name="phonenumberReg"
+          onChange={(e) => {setPhonenumberReg(e.target.value)}}
         />
-        {/* <br/> */}
+        <br/>
 
         {/* <label>Phone Number</label>
           <input type='text' placeholder='Phone Number' name="phonenumberReg" onChange={(e) => {setPhonenumberReg(e.target.value)}} ></input> */}

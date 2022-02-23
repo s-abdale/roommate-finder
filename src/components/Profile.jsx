@@ -17,6 +17,9 @@ import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import PhoneIphoneRoundedIcon from '@mui/icons-material/PhoneIphoneRounded';
 import PersonPinOutlinedIcon from '@mui/icons-material/PersonPinOutlined';
 
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
+
 export default function Profile(props) {
   
   const [user, setUser] = useState({})
@@ -55,6 +58,7 @@ export default function Profile(props) {
     })
   }, [])
 
+  const [phonevalue, setPhoneValue] = useState()
 
   return (
     <section className='main-body-profile'>
@@ -86,6 +90,7 @@ export default function Profile(props) {
 
           <tr>
             <td><PhoneIphoneRoundedIcon className='icons-detailedProfile' color="disabled"/></td>
+            {/* <td><PhoneInput initialValueFormat="national" defaultCountry="CA" value={user.phone_number}/></td> */}
             <td>{user.phone_number}</td>
           </tr>
         </table>
