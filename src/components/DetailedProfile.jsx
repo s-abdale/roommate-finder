@@ -28,6 +28,14 @@ export default function DetailedProfile() {
     })
   }, [])
 
+  function formatPhoneNumber(phoneNumberString) {
+    var cleaned = ('' + phoneNumberString).replace(/\D/g, '')
+    var match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/)
+    if (match) {
+      return '(' + match[1] + ')-' + match[2] + '-' + match[3]
+    }
+    return null
+  }
 
   return (
     <div className='detailed-profile-page'>
@@ -76,7 +84,7 @@ export default function DetailedProfile() {
 
             <tr>
               <td><PhoneIphoneRoundedIcon className='icons-detailedProfile' color="disabled"/></td>
-              <td>{user.phone_number}</td>
+              <td>{formatPhoneNumber(user.phone_number)}</td>
             </tr>
           </table>
         </article>

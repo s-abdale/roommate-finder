@@ -55,6 +55,14 @@ export default function Profile(props) {
     })
   }, [])
 
+  function formatPhoneNumber(phoneNumberString) {
+    var cleaned = ('' + phoneNumberString).replace(/\D/g, '')
+    var match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/)
+    if (match) {
+      return '(' + match[1] + ')-' + match[2] + '-' + match[3]
+    }
+    return null
+  }
 
   return (
     <section className='main-body-profile'>
@@ -86,7 +94,7 @@ export default function Profile(props) {
 
           <tr>
             <td><PhoneIphoneRoundedIcon className='icons-detailedProfile' color="disabled"/></td>
-            <td>{user.phone_number}</td>
+            <td>{formatPhoneNumber(user.phone_number)}</td>
           </tr>
         </table>
         {/* <article className='user-details'>
