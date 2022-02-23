@@ -126,7 +126,7 @@ export default function EditProfile(props){
           name="firstnameEdit"
           onChange={(e) => {setFirstnameEdit(e.target.value)}}
         />
-        <br/>
+        {/* <br/> */}
 
         <TextField
           id="outlined-basic"
@@ -137,7 +137,7 @@ export default function EditProfile(props){
           value={lastnameEdit} 
           name="lastnameEdit"onChange={(e) => {setLastnameEdit(e.target.value)}} 
         />
-        <br/>
+        {/* <br/> */}
 
 
         <TextField
@@ -150,7 +150,7 @@ export default function EditProfile(props){
           name="emailEdit" 
           onChange={(e) => {setEmailEdit(e.target.value)}}
         />
-        <br/>
+        {/* <br/> */}
 
         
         <TextField
@@ -163,7 +163,7 @@ export default function EditProfile(props){
           name="phonenumberEdit" 
           onChange={(e) => {setPhonenumberEdit(e.target.value)}} 
         />
-        <br/>
+        {/* <br/> */}
 
 
         <FormControl fullWidth>
@@ -193,7 +193,7 @@ export default function EditProfile(props){
           name="contactinfoEdit" 
           onChange={(e) => {setContactinfoEdit(e.target.value)}}
         />
-        <br/>
+        {/* <br/> */}
 
 
         <TextField
@@ -207,7 +207,7 @@ export default function EditProfile(props){
           name="bioEdit" 
           onChange={(e) => {setBioEdit(e.target.value)}}
         />
-        <br/>
+        {/* <br/> */}
 
 
         <TextField
@@ -219,7 +219,7 @@ export default function EditProfile(props){
           name="locationEdit" 
           onChange={(e) => {setLocationEdit(e.target.value)}}
         />
-        <br/>
+        {/* <br/> */}
 
 
         <TextField
@@ -237,6 +237,8 @@ export default function EditProfile(props){
         <Link to="/profile">
           <button type='submit' onClick={edit} className='edit-profile-update-button'> Update </button>
         </Link>
+
+        <br/>
 
       </form>   
     </section>
