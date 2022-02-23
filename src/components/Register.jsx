@@ -57,7 +57,7 @@ export default function Resgister({setresUser, setUserID}) {
   //https://i.pinimg.com/originals/74/cd/f8/74cdf85c9f3ee94b77b4da0b81d9f17f.jpg
   //https://wallpaperaccess.com/full/1098481.jpg
   return (
-    <div className="registerDiv" style={{ backgroundImage: `url("https://wallpaperaccess.com/full/1098481.jpg")`}}>
+    <div className="registerDiv" style={{ backgroundImage: `url("https://i.gifer.com/origin/11/112ad705e340107c20d9070f4ab26a03_w200.gif")`}}>
       <form onSubmit={event => event.preventDefault()} autoComplete="off" className='register'>
         {/* <h1>Registration</h1> */}
         <label>First Name</label>

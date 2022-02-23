@@ -10,7 +10,7 @@ export default function Login({login}) {
   const [password, setPassword] = useState('')
 
   return (
-    <div className='loginDiv' style={{ backgroundImage: `url("https://wallpaperaccess.com/full/833312.png")`}}>
+    <div className='loginDiv' style={{ backgroundImage: `url("https://i.gifer.com/origin/11/112ad705e340107c20d9070f4ab26a03_w200.gif")`}}>
     <form onSubmit={event => event.preventDefault()} autoComplete="off" className='login'>
         {/* <p style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/221808/sky.jpg');"></p> */}
 

@@ -5,14 +5,14 @@
   justify-content: space-around; */
   /* height: 92vh; */
   /* color: cadetblue; */
-  padding-top: 50px;
+  padding-top: 10%;
   background-repeat: no-repeat;
 }
 
 .main-page-buttons-container {
   height: 70vh;
-  margin-top: 50px;
-  padding: 50px;
+  margin-top: 15%;
+  padding: 12.5%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -67,7 +67,7 @@
   display: inline-flex;
   font-size: 1rem;
   font-weight: 700;
-  height: 56px;
+  height: 20%;
   justify-content: center;
   line-height: 24px;
   overflow-wrap: break-word;
@@ -85,10 +85,10 @@
   color: white;
 }
 
-@media all and (max-width: 375px) {
+@media all and (max-width: 820px) {
   .main-body{
     /* background-image: url(https://wallpaperaccess.com/full/1098481.jpg); */
-    height: 718px;
+    height: 100vh;
     background-size: cover;
     /* margin-top: -50px; */
   }
