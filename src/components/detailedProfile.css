@@ -2,14 +2,10 @@
   padding-top: 50px;
   height: 100vh;
 }
+
 .detailed-profile {
-  /* padding: 5%; */
   margin: 5%;
   margin-top: 5vh;
-
-  /* min-height: 60vh; */
-  /* overflow: scroll; */
-
 }
 
 .user-details {
@@ -31,12 +27,10 @@
   background-color: gainsboro;
   max-width: inherit;
   max-height: 45vh;
-  /* margin-bottom: 5vh; */
 }
 
 p{
   margin: 3px;
-  /* font-size: 1.2rem; */
 }
 .icons-detailedProfile:hover{
   color: #e84ca5;
@@ -44,4 +38,27 @@ p{
 
 table {
   border-spacing: 0.5rem;
+}
+
+.BackToMatchList {
+  text-decoration: none;
+  align-items: center;
+  background: #FFFFFF;
+  border: 0 solid #E2E8F0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  color: #1A202C;
+  display: inline-flex;
+  font-size: 1rem;
+  font-weight: 700;
+  height: 56px;
+  justify-content: center;
+  line-height: 24px;
+  overflow-wrap: break-word;
+  padding: 24px;
+  width: auto;
+  border-radius: 4px;
+  
+  margin-left: 122px;
+  margin-bottom: 20px;
 }
