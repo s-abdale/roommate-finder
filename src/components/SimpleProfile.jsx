@@ -42,10 +42,13 @@ export default function SimpleProfile(props) {
 
         <article className='user-details'>
 
-          <p>{props.user_name}</p>
-          <p>{firstEmoji}</p>
-          <p>{restOfBio}</p>
-          {/* <p>{props.image}</p> */}
+          <div className='simple-profile-emoji'>{firstEmoji}</div>
+          
+          <div className='simple-profile-text-fields'>
+            <p className='simple-profile-username'>{props.user_name}</p>
+            <br/>
+            <p>{restOfBio}</p>
+          </div>
           
         </article>
       </Card>
