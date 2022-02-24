@@ -104,7 +104,7 @@ export default function Preferences() {
           <FormControlLabel
             control={
               <Checkbox 
-                // checked={petFriendly} 
+                checked={petFriendly} 
                 onChange={(e) => {setPetFriendly(e.target.checked)}}
                 // onChange={(e) => {console.log(e.target.checked)}}
 
