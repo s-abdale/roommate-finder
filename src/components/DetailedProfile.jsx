@@ -11,6 +11,7 @@ import FmdGoodOutlinedIcon from '@mui/icons-material/FmdGoodOutlined';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import PhoneIphoneRoundedIcon from '@mui/icons-material/PhoneIphoneRounded';
 import PersonPinOutlinedIcon from '@mui/icons-material/PersonPinOutlined';
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 
 
 export default function DetailedProfile() {
@@ -36,6 +37,29 @@ export default function DetailedProfile() {
     }
     return null
   }
+
+  function formatBioGetEmoji(bioString) {    
+    if (bioString !== undefined) {
+      const regex = /^(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/g;
+      const found = bioString.match(regex);
+      console.log(found[0]);
+      return found[0]
+    } else {
+      console.log(`couldn't find an emoji :(`)
+    }
+  }
+  const firstEmoji = formatBioGetEmoji(user.bio);
+  
+  function formatBioGetBio(bioString) {
+    if (bioString !== undefined) {
+      const regex = /^(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/g;
+      const remaining = bioString.replace(regex, '');
+      return remaining
+    } else {
+      console.log(`couldn't find a string :(`)
+    }
+  }
+  const restOfBio = formatBioGetBio(user.bio);
 
   return (
     <div className='detailed-profile-page'>
@@ -63,7 +87,6 @@ export default function DetailedProfile() {
 
           <table className='user-details-table'>
             <tr>
-              {/* <td> </td> */}
               <th colspan="2" className='user-details-table-fullName'>{user.first_name} {user.last_name}</th>
             </tr>
 
@@ -73,8 +96,13 @@ export default function DetailedProfile() {
             </tr>
 
             <tr>
+              <td><HomeOutlinedIcon className='icons-detailedProfile' color="disabled"/></td>
+              <td>{firstEmoji}</td>
+            </tr>
+
+            <tr>
               <td><PersonPinOutlinedIcon className='icons-detailedProfile' color="disabled"/></td>
-              <td>{user.bio}</td>
+              <td>{restOfBio}</td>
             </tr>
 
             <tr>
