@@ -21,3 +21,21 @@
   /* height: 20rem; */
   width: 21rem;
 }
+
+.simple-profile-username {
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.simple-profile-emoji {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  font-size: 40px;
+}
+
+.simple-profile-text-fields {
+  margin-top: 2.7rem;
+}
