@@ -7,20 +7,19 @@ Collaborators: Saranya Sagi, Andrew Spon
 ## Final Product
 
 ### ☑︎ Material UI Login/Registration
-![]()
-
-### ☑︎ Responsive mobile design
-![]()
+![login-mui](https://github.com/s-abdale/roommate-finder/blob/main/docs/login:reg-mui.gif?raw=true)
 
 ### ☑︎ Tinder card swipe
-![]()
+![cardSwipe](https://github.com/s-abdale/roommate-finder/blob/main/docs/cardSwipe.gif?raw=true)
 
-### ☑︎ Edit Profile and Preferences
-![]()
+### ☑︎ Responsive mobile design
+![resonsive](https://github.com/s-abdale/roommate-finder/blob/main/docs/responsive.gif?raw=true)
 
-### ☑︎ Matches List and detailed profile
-![]()
+### ☑︎ Edit Profile
+![editLocation](https://github.com/s-abdale/roommate-finder/blob/main/docs/updateLocatioin.gif?raw=true)
 
+### ☑︎ Edit Preferences and get updated matches
+![updateMatches](https://github.com/s-abdale/roommate-finder/blob/main/docs/updatePreferences.gif?raw=true)
 
 ## Stack
 
