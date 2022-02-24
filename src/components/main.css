@@ -67,13 +67,14 @@
   display: inline-flex;
   font-size: 1rem;
   font-weight: 700;
-  height: 20%;
+  /* height: 20%; */
   justify-content: center;
   line-height: 24px;
   overflow-wrap: break-word;
   padding: 24px;
   width: 12rem;
   border-radius: 4px;
+  font-size: larger;
 }
 /* ---------------- */
 
