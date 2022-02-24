@@ -2,6 +2,9 @@
 
 A REACT based app to allow end-users to set preferences, match with others looking for roommates through swipe and have access to their contact info all in one place. Responsive mobile design. Using REACT framework, axios, express, node backend. Front end - Material UI, CSS. 
 
+Backend API server to handle routes, database, seeds: [Backend Server API](https://github.com/Sponicus/roommate-finder-api)
+(https://github.com/Sponicus/roommate-finder-api)
+
 Collaborators: Saranya Sagi, Andrew Spon
 
 ## Final Product
@@ -46,4 +49,5 @@ Collaborators: Saranya Sagi, Andrew Spon
 ## Getting Started
 
 - npm install
+- Run backend server API - npm run server (npm run resetdb to reset)
 
