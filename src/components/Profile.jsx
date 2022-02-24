@@ -75,7 +75,7 @@ export default function Profile(props) {
       const regex = /^(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/g;
       // console.log(bioString);
       const found = bioString.match(regex);
-      console.log(found[0]);
+      // console.log(found[0]);
       return found[0]
     } else {
       console.log(`couldn't find an emoji :(`)
